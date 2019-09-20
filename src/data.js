@@ -2,7 +2,11 @@ export default [
     {
         image: "/images/download.jpeg",
         name: "John Doe",
-        accessories: [0,1,2],
+        accessories: [
+            {type:0, amount:2},
+            {type:1, amount:2},
+            {type:2, amount:2}
+        ],
         modified: "01.01.01",
         status: "Enabled",
         type:"manager",
@@ -12,7 +16,11 @@ export default [
     {
         image: "/images/mr.jpg",
         name: "Brian Smith",
-        accessories: [0,1,2],
+        accessories: [
+            {type:0, amount:2},
+            {type:1, amount:2},
+            {type:2, amount:2}
+        ],
         modified: "01.01.01",
         status: "Enabled",
         type:"manager",
@@ -22,7 +30,11 @@ export default [
     {
         image: "/images/dj.jpg",
         name: "Jack McDougal",
-        accessories: [0,1,2],
+        accessories: [
+            {type:0, amount:2},
+            {type:1, amount:2},
+            {type:2, amount:2}
+        ],
         modified: "01.01.01",
         status: "Disabled",
         type:"manager",
@@ -32,7 +44,11 @@ export default [
     {
         image: "/images/jd.jpg",
         name: "John Doe",
-        accessories: [0,1,2],
+        accessories: [
+            {type:0, amount:2},
+            {type:1, amount:2},
+            {type:2, amount:2}
+        ],
         modified: "01.01.01",
         status: "Enabled",
         type:"manager",

@@ -1,18 +1,47 @@
-import React, { Component } from 'react'
+import React from 'react'
 import DashboardFilterContent from './DashboardFilterContent'
+import { connect } from "react-redux"
+import { getFilterState } from "../../redux/selectors"
+import { toggleFilter } from "../../redux/reducers/filter/actions"
+import { bindActionCreators } from 'redux'
 
-export default class DashboardFilter extends Component {
-    render() {
-        return (
-            <div className="boss-page-dashboard__filter">
-                <div className="boss-dropdown">
-                    <div className="boss-dropdown__header">
-                        <a href="#" className="boss-dropdown__switch boss-dropdown__switch_role_filter boss-dropdown__switch_state_opened">Filter</a>
-                    </div>
-                    <DashboardFilterContent />
+function DashboardFilter({ filterState,toggleFilter }) {
+    const filterStateClass = "boss-dropdown__switch_state_opened";
+    return (
+        <div className="boss-page-dashboard__filter">
+            <div className="boss-dropdown">
+                <div className="boss-dropdown__header">
+                    <a href="#"
+                        onClick={toggleFilter}
+                        className={
+                            "boss-dropdown__switch boss-dropdown__switch_role_filter " +
+                            (filterState ? filterStateClass : "")
+
+                        }>
+                        Filter
+                  </a>
                 </div>
-                
+                <DashboardFilterContent opened = {filterState} />
             </div>
-        )
+        </div>
+    )
+}
+
+const mapStateToProps = (state) => {
+    return {
+        filterState: getFilterState(state)
     }
 }
+
+const mapDispatchToProps = (dispatch) =>
+    bindActionCreators({
+        toggleFilter
+    },
+        dispatch
+    );
+
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(DashboardFilter);

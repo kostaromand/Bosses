@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-export default class DashboardFilterContent extends Component {
-    render() {
-        return (
-            <div className="boss-dropdown__content" style ={{display:"none"}}>
-                <div className="boss-dropdown__content-inner">
-                    
+export default function DashboardFilterContent({opened}) {
+    const contentClasses = "boss-dropdown__content" + (opened ? " boss-dropdown__content_state_opened" : "")
+    const contentStyle = opened?{display:"block"}:{display:"none"};
+    return (
+        <div className={contentClasses} style = {contentStyle}>
+            <div className="boss-dropdown__content-inner">
+                asdsad
                 </div>
-            </div>
-        )
-    }
+        </div>
+    )
 }

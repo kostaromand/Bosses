@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Column from './Column'
 import ColumnImage from './ColumnImage';
 import Link from './Link';
+import AccessorList from './AccessorList';
 
 export default class Row extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ export default class Row extends Component {
                     <Link>{name}</Link>
                 </Column>
                 <Column>
-                    {accessories}
+                    <AccessorList accessories = {accessories}/>
                 </Column>
                 <Column>
                     {modified}
