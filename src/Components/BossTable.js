@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Row from './Boss/Row'
+import Boss from './Boss'
 import data from "../data";
 export default class BossTable extends Component {
     render() {
@@ -16,7 +16,7 @@ export default class BossTable extends Component {
                     <div className="boss-table__cell boss-table__cell_role_header">Work Venues</div>
                 </div>
                 { data.map((element,id) => 
-                <Row key = {id} data = {element}/>
+                <Boss key = {id} data = {element}/>
                 )}
             </div>
         )

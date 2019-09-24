@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import DashboardFilter from './DashboardFilter'
+import Filter from './Filter'
 
 export default class Dashboard extends Component {
     render() {
@@ -17,7 +17,7 @@ export default class Dashboard extends Component {
                                 <a href="#" className="boss-button boss-button_role_add boss-page-dashboard__button">Add Staff Members</a>
                             </div>
                         </div>
-                        <DashboardFilter />
+                        <Filter />
                     </div>
                    
                 </div>

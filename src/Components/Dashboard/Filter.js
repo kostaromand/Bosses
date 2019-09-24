@@ -1,13 +1,14 @@
 import React from 'react'
-import DashboardFilterContent from './DashboardFilterContent'
+import FilterContent from './FilterContent'
 import { connect } from "react-redux"
 import { getFilterState } from "../../redux/selectors"
 import { toggleFilter } from "../../redux/reducers/filter/actions"
 import { bindActionCreators } from 'redux'
 
-function DashboardFilter({ filterState,toggleFilter }) {
+        
+function DashboardFilter({filterState, toggleFilter}) {
     const filterStateClass = "boss-dropdown__switch_state_opened";
-    return (
+        return (
         <div className="boss-page-dashboard__filter">
             <div className="boss-dropdown">
                 <div className="boss-dropdown__header">
@@ -21,27 +22,27 @@ function DashboardFilter({ filterState,toggleFilter }) {
                         Filter
                   </a>
                 </div>
-                <DashboardFilterContent opened = {filterState} />
+                <FilterContent opened={filterState}/>
             </div>
         </div>
-    )
-}
-
+        )
+    }
+    
 const mapStateToProps = (state) => {
     return {
-        filterState: getFilterState(state)
+            filterState: getFilterState(state)
     }
 }
 
 const mapDispatchToProps = (dispatch) =>
     bindActionCreators({
-        toggleFilter
-    },
-        dispatch
-    );
-
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(DashboardFilter);
+            toggleFilter
+        },
+            dispatch
+        );
+    
+    
+    export default connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )(DashboardFilter);
