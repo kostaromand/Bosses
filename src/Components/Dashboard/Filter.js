@@ -6,7 +6,7 @@ import { toggleFilter } from "../../redux/reducers/filter/actions"
 import { bindActionCreators } from 'redux'
 
         
-function DashboardFilter({filterState, toggleFilter}) {
+const Filter = ({filterState, toggleFilter}) => {
     const filterStateClass = "boss-dropdown__switch_state_opened";
         return (
         <div className="boss-page-dashboard__filter">
@@ -45,4 +45,4 @@ const mapDispatchToProps = (dispatch) =>
     export default connect(
         mapStateToProps,
         mapDispatchToProps
-    )(DashboardFilter);
+    )(Filter);

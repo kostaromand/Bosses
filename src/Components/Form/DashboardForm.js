@@ -1,9 +1,9 @@
-import React  from 'react'
+import React from 'react'
 import { Form, Field } from 'react-final-form'
 import FormInput from './FormInput';
 import FormSelect from './FormSelect';
 import FormField from './FormField';
-import FormCheckBox from './FormCheckBox';
+import DashboardLabelGroup from './DashboardLabelGroup';
 import ReactSelect from 'react-select'
 import Button from "./Button"
 
@@ -42,9 +42,10 @@ const FinalForm = () => (
                             <Field
                                 name="master-venue"
                                 labelText="Venue"
+                                initialValue="true"
                                 type="checkbox"
                                 checkBoxText="Master venue only"
-                                component={FormCheckBox}
+                                component={DashboardLabelGroup}
                             />
                             <Field
                                 name="venue"
@@ -75,7 +76,7 @@ const FinalForm = () => (
                         <Field type="submit">
                             {
                                 () => (
-                                    <FormField style="boss-form__field boss-form__field_justify_end boss-form__field_no-label">
+                                    <FormField classes="boss-form__field boss-form__field_justify_end boss-form__field_no-label">
                                         <Button text="Update" />
                                     </FormField>
                                 )

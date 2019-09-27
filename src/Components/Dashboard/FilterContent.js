@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Form from "./Form"
+import DashboardForm from "../Form/DashboardForm"
 
 export default function DashboardFilterContent({ opened }) {
     const contentClasses = "boss-dropdown__content" + (opened ? " boss-dropdown__content_state_opened" : "")
@@ -7,7 +7,7 @@ export default function DashboardFilterContent({ opened }) {
     return (
         <div className={contentClasses} style={contentStyle}>
             <div className="boss-dropdown__content-inner">
-            <Form/>
+            <DashboardForm/>
             </div>
         </div>
     )

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Dashboard from './Dashboard/Dashboard'
-import BossTable from './BossTable'
+import BossTable from './Boss/BossTable'
 
 export default class Main extends Component {
     render() {
