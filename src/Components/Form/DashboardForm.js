@@ -32,8 +32,8 @@ const FinalForm = () => (
                             component={FormInput} />
                         <Field
                             name="status"
-                            options={options]
-                        }
+                            options={options}
+                        
                         labelText="Status"
                         type="select"
                         placeholder="Any"
