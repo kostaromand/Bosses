@@ -2,6 +2,7 @@ import React from 'react'
 import FormField from './FormField'
 import Label from './Label'
 import { Input } from './UI'
+import PropTypes from 'prop-types'
 
 export default function FormInput({ input, labelText }) {
     return (
@@ -12,3 +13,14 @@ export default function FormInput({ input, labelText }) {
         </FormField>
     )
 }   
+
+FormInput.propTypes = {
+    input: PropTypes.shape(
+        {
+            type:PropTypes.string,
+            onChange:PropTypes.func,
+            name:PropTypes.string
+        }
+    ).isRequired,
+    labelText:PropTypes.string
+}

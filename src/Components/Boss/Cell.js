@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Cell = ({ children, classes }) => {
     return (
@@ -8,4 +9,14 @@ const Cell = ({ children, classes }) => {
     )
 }
 
+Cell.propTypes = {
+    classes: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
+}
+
 export default Cell
+
+

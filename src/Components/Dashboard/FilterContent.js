@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import DashboardForm from "../Form/DashboardForm"
+import PropTypes from 'prop-types'
 
 export default function DashboardFilterContent({ opened }) {
     const contentClasses = "boss-dropdown__content" + (opened ? " boss-dropdown__content_state_opened" : "")
@@ -11,4 +12,8 @@ export default function DashboardFilterContent({ opened }) {
             </div>
         </div>
     )
+}
+
+DashboardFilterContent.propTypes = {
+    opened: PropTypes.bool.isRequired
 }

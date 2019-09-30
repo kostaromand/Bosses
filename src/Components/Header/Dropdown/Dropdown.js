@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getSearchToggleState } from '../../../redux/selectors'
 import DropdownHeader from './DropdownHeader';
 import DropdownContent from './DropdownContent';
+import PropTypes from 'prop-types'
 
 const Dropdown = ({ searchState }) => {
     const classes = "boss-page-header__dropdown boss-page-header__dropdown_role_search boss-page-header__dropdown_no-select "
@@ -16,6 +17,10 @@ const Dropdown = ({ searchState }) => {
             <DropdownContent/>
         </div>
     )
+}
+
+Dropdown.propTypes = {
+    searchState: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = (state) => {

@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 export default function ColumnImage({ imagePath }) {
     return (
         <div className="boss-table__cell">
@@ -11,4 +13,8 @@ export default function ColumnImage({ imagePath }) {
             </div>
         </div>
     )
+}
+
+ColumnImage.propTypes = {
+    imagePath: PropTypes.string.isRequired
 }

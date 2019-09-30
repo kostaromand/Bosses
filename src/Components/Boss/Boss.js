@@ -3,6 +3,7 @@ import Column from './Column'
 import ColumnImage from './ColumnImage';
 import Link from './Link';
 import AccessorList from './AccessorList';
+import PropTypes from 'prop-types'
 
 export default function Boss({data}) {
     const { image, name, accessories, modified, status, type, masterVenue, workVenues } = data;
@@ -38,4 +39,8 @@ export default function Boss({data}) {
             </Column>
         </div>
     )
+}
+
+Boss.propTypes = {
+    data: PropTypes.object
 }

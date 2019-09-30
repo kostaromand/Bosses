@@ -1,5 +1,6 @@
 import React from 'react'
 import BossAlias from './BossAlias'
+import PropTypes from 'prop-types'
 
 const QuickAccessGroup = ({ title, styles, group }) => {
     return (
@@ -20,6 +21,13 @@ const QuickAccessGroup = ({ title, styles, group }) => {
 
         </div>
     )
+}
+
+
+QuickAccessGroup.propTypes = {
+    styles: PropTypes.object,
+    group: PropTypes.array,
+    title: PropTypes.string,
 }
 
 export default QuickAccessGroup

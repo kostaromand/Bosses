@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const BossAlias = ({ iconStyle, aliasStyle, iconName, aliasText }) => {
     return (
@@ -16,5 +17,14 @@ const BossAlias = ({ iconStyle, aliasStyle, iconName, aliasText }) => {
         </div>
     )
 }
+
+
+BossAlias.propTypes = {
+    iconStyle: PropTypes.object,
+    aliasStyle: PropTypes.object,
+    iconName: PropTypes.string,
+    aliasText: PropTypes.string
+}
+
 
 export default BossAlias

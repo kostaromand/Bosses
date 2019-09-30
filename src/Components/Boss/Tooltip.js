@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const Tooltip = ({header,text }) => {
     return (
@@ -9,6 +10,11 @@ const Tooltip = ({header,text }) => {
             <span className="boss-indicator__tooltip-line">{text}</span>
         </span>
     );
+}
+
+Tooltip.propTypes = {
+    header:PropTypes.string,
+    text: PropTypes.string
 }
 
 export default Tooltip;

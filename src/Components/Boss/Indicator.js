@@ -1,5 +1,6 @@
 import React from 'react'
 import Tooltip from './Tooltip'
+import PropTypes from 'prop-types'
 
 export default function Indicator({ type, tooltip, count, color }) {
     const counter = (count > 0 ?
@@ -14,4 +15,11 @@ export default function Indicator({ type, tooltip, count, color }) {
             <Tooltip {...tooltip} />
         </span>
     )
+}
+
+Indicator.propTypes = {
+    type: PropTypes.oneOfType([PropTypes.string,PropTypes.number]),
+    tooltip: PropTypes.object,
+    count: PropTypes.number,
+    color: PropTypes.string
 }

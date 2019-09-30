@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function FormField({children, classes}) {
     return (
@@ -7,4 +8,9 @@ export default function FormField({children, classes}) {
         </div>
     )
 }
+
+FormField.propTypes = {
+    classes:PropTypes.string
+}
+
 

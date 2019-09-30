@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function Button({ text }) {
     return (
@@ -6,4 +7,8 @@ export default function Button({ text }) {
             {text}
         </button>
     )
+}
+
+Button.propTypes = {
+    text: PropTypes.string.isRequired
 }

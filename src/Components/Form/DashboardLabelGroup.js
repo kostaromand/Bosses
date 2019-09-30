@@ -1,5 +1,6 @@
 import React from 'react'
 import { CheckBox } from './UI'
+import PropTypes from 'prop-types'
 
 export default function DashboardLabelGroup({ input, labelText, checkBoxText }) {
     return (
@@ -17,4 +18,16 @@ export default function DashboardLabelGroup({ input, labelText, checkBoxText }) 
             </label>
         </div>
     )
+}
+
+DashboardLabelGroup.propTypes = {
+    input: PropTypes.shape(
+        {
+            type:PropTypes.string,
+            onChange:PropTypes.func,
+            name:PropTypes.string
+        }
+    ).isRequired,
+    labelText:PropTypes.string,
+    checkBoxText:PropTypes.string
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import Cell from './Cell'
+import PropTypes from 'prop-types'
 
 export default function Column({ children, labelName }) {
     return (
@@ -13,3 +14,12 @@ export default function Column({ children, labelName }) {
         </Cell>
     )
 }
+
+Column.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]),
+    labelName: PropTypes.string
+}
+

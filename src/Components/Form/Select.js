@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 export default function Select({input, options, placeholder }) {
     return (
         <div className="boss-form__select">
@@ -30,4 +32,9 @@ export default function Select({input, options, placeholder }) {
             </div>
         </div>
     )
+}
+
+Select.propTypes = {
+    options: PropTypes.array.isRequired,
+    placeholder: PropTypes.string.isRequired
 }
