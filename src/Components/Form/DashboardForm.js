@@ -33,22 +33,21 @@ const FinalForm = () => (
                         <Field
                             name="status"
                             options={options}
-                        
-                        labelText="Status"
-                        type="select"
-                        placeholder="Any"
+
+                            labelText="Status"
+                            type="select"
+                            placeholder="Any"
                             component={FormSelect} />
                     </div>
                     <div className="boss-form__group boss-form__group_layout_half">
                         <FormField>
-                            <Field
-                                name="master-venue"
-                                labelText="Venue"
-                                initialValue="true"
-                                type="checkbox"
-                                checkBoxText="Master venue only"
-                                component={DashboardLabelGroup}
-                            />
+                            <Field>
+                                {
+                                    () => (
+                                        <input name="master-venue" type="checkbox" />
+                                    )
+                                }
+                            </Field>
                             <Field
                                 name="venue"
                                 options={options}
