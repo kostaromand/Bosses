@@ -10,6 +10,10 @@ import Button from "./Button"
 const onSubmit = (value) => {
     alert(JSON.stringify(value));
 }
+const options = [
+    { value: "One", label: "One" },
+    { value: "Two", label: "Two" }
+]
 
 const FinalForm = () => (
     <Form
@@ -28,13 +32,11 @@ const FinalForm = () => (
                             component={FormInput} />
                         <Field
                             name="status"
-                            options={
-                                [{ value: "One", label: "One" },
-                                { value: "Two", label: "Two" }]
-                            }
-                            labelText="Status"
-                            type="select"
-                            placeholder="Any"
+                            options={options]
+                        }
+                        labelText="Status"
+                        type="select"
+                        placeholder="Any"
                             component={FormSelect} />
                     </div>
                     <div className="boss-form__group boss-form__group_layout_half">
@@ -49,10 +51,7 @@ const FinalForm = () => (
                             />
                             <Field
                                 name="venue"
-                                options={
-                                    [{ value: "One", label: "One" },
-                                    { value: "Two", label: "Two" }]
-                                }
+                                options={options}
                                 type="select"
                                 placeholder="Any"
                             >
@@ -65,10 +64,7 @@ const FinalForm = () => (
                         </FormField>
                         <Field
                             name="stuff-type"
-                            options={
-                                [{ value: "One", label: "One" },
-                                { value: "Two", label: "Two" }]
-                            }
+                            options={options}
                             type="select"
                             labelText="Stuff type"
                             placeholder="Any"
