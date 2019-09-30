@@ -7,7 +7,19 @@ const QuckAccessGroupContainer = () => {
             {
                 aliasData.map((group, id) => (
                     <QuickAccessGroup key={id} {...group} />
-                ))}
+                ))
+            }
+            {
+                aliasData.map((group, id) => (
+                    <QuickAccessGroup key={id} {...group} />
+                ))
+            }
+            {
+                aliasData.map((group, id) => (
+                    <QuickAccessGroup key={id} {...group} />
+                ))
+            }
+
         </div>
     )
 }
