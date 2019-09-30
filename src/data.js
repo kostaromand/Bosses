@@ -3,9 +3,9 @@ const bossData = [
         image: "/images/download.jpeg",
         name: "John Doe",
         accessories: [
-            { type: 0, amount: 2 },
-            { type: 1, amount: 2 },
-            { type: 2, amount: 2 }
+            { color: "#2ecc71", count: 3, tooltip: { header: "aad", text: "adsd" } },
+            { type: "boss-indicator__icon_apron", color: "cd84f1", count: 3, tooltip: { header: "aad", text: "adsd" } },
+            { color: "", count: 3, tooltip: { header: "aad", text: "adsd" } },
         ],
         modified: "01.01.01",
         status: "Enabled",

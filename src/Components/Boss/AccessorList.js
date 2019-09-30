@@ -1,8 +1,14 @@
 import React from 'react'
-export default function AccessorList({accessories}) {
+import Indicator from "./Indicator"
+export default function AccessorList({ accessories }) {
     return (
-       <span>
-           sad
-        </span>
+        <>
+            {
+                accessories.map((elem, id) => (
+                    <Indicator key={id}  {...elem} />
+                ))
+            }
+
+        </>
     )
 }
