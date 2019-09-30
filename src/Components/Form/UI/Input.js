@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Input = ({input, ...rest}) => {
+const Input = ({input, className}) => {
     return (
-        <input {...input} {...rest}/>
+        <input {...input} className = {className}/>
     )
 }
 
@@ -15,7 +15,7 @@ Input.propTypes = {
             name:PropTypes.string
         }
     ).isRequired,
-    rest:PropTypes.object
+    className:PropTypes.string
 }
 
 export default Input

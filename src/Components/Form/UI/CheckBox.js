@@ -1,20 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function CheckBox({input,...rest}) {
+export default function CheckBox({ input, className }) {
     return (
-        <input {...input} {...rest} type="checkbox"/>
+        <input {...input} className = {className} type="checkbox" />
     )
 }
 
 CheckBox.propTypes = {
     input: PropTypes.shape(
         {
-            type:PropTypes.string,
-            onChange:PropTypes.func,
-            name:PropTypes.string
+            type: PropTypes.string,
+            onChange: PropTypes.func,
+            name: PropTypes.string
         }
     ).isRequired,
-    rest:PropTypes.object
+    className: PropTypes.string
 }
 
