@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Dropdown from "./Dropdown"
 import Search from './Search'
-export default function Header () {
+
+const Header = () => {
     return (
         <header className="boss-page-header">
             <div className="boss-page-header__inner">
                 <div className="boss-page-header__group boss-page-header__group_role_logo">
-                    <a className="boss-page-header__logo">Boss</a>
+                    <a href="/" className="boss-page-header__logo">Boss</a>
                 </div>
                 <Search />
-                <a href="#"
+                <a href="/"
                     className="boss-page-header__action boss-page-header__action_role_profile"
                     data-dropdown="profile"
                 >
@@ -22,3 +23,5 @@ export default function Header () {
         </header>
     )
 }
+
+export default Header;

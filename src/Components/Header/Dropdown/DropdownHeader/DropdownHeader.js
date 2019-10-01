@@ -2,7 +2,7 @@ import React from 'react'
 import HeaderDropdownForm from '../../../Form/HeaderDropdownForm'
 import CloseButton from './CloseButton'
 
-export default function DropdownHeader() {
+const DropdownHeader = () => {
     return (
         <div>
             <div className="boss-page-header__dropdown-header">
@@ -12,9 +12,11 @@ export default function DropdownHeader() {
                 <div className="boss-page-header__dropdown-filter">
                     <HeaderDropdownForm />
                 </div>
-                <CloseButton/>
+                <CloseButton />
             </div>
         </div>
     )
 }
+
+export default DropdownHeader;
 

@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Dashboard from './Dashboard/Dashboard'
 import BossTable from './Boss/BossTable'
 
-export default class Main extends Component {
-    render() {
-        return (
-            <main className="boss-page-main">
-                <Dashboard />
-                <div className="boss-page-main__content">
-                    <div className="boss-page-main__inner">
-                        <BossTable />
-                    </div>
+const Main = () => {
+    return (
+        <main className="boss-page-main">
+            <Dashboard />
+            <div className="boss-page-main__content">
+                <div className="boss-page-main__inner">
+                    <BossTable />
                 </div>
-            </main>
-        )
-    }
+            </div>
+        </main>
+    )
 }
+
+export default Main;

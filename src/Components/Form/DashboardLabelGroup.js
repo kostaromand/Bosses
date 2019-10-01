@@ -2,7 +2,7 @@ import React from 'react'
 import { CheckBox } from './UI'
 import PropTypes from 'prop-types'
 
-export default function DashboardLabelGroup({ input, labelText, checkBoxText }) {
+const DashboardLabelGroup = ({ input, labelText, checkBoxText }) => {
     return (
         <div className="boss-form__label-group">
             <p className="boss-form__label">
@@ -31,3 +31,5 @@ DashboardLabelGroup.propTypes = {
     labelText:PropTypes.string,
     checkBoxText:PropTypes.string
 }
+
+export default DashboardLabelGroup;

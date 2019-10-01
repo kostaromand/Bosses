@@ -2,7 +2,7 @@ import React from 'react'
 import Cell from './Cell'
 import PropTypes from 'prop-types'
 
-export default function Column({ children, labelName }) {
+const Column = ({ children, labelName }) => {
     return (
         <Cell>
             <div className="boss-table__info">
@@ -23,3 +23,4 @@ Column.propTypes = {
     labelName: PropTypes.string
 }
 
+export default Column;

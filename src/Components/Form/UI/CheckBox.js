@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function CheckBox({ input, className }) {
+const CheckBox = ({ input, className }) => {
     return (
         <input {...input} className = {className} type="checkbox" />
     )
@@ -18,3 +18,4 @@ CheckBox.propTypes = {
     className: PropTypes.string
 }
 
+export default CheckBox;

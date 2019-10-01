@@ -2,7 +2,7 @@ import React from 'react'
 import Indicator from "./Indicator"
 import PropTypes from 'prop-types'
 
-export default function AccessorList({ accessories }) {
+const AccessorList = ({ accessories }) => {
     return (
         <>
             {
@@ -18,3 +18,5 @@ export default function AccessorList({ accessories }) {
 AccessorList.propTypes = {
     accessories: PropTypes.array.isRequired
 }
+
+export default AccessorList;

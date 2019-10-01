@@ -4,7 +4,7 @@ import Label from './Label'
 import ReactSelect from 'react-select'
 import PropTypes from 'prop-types'
 
-export default function FormSelect({input,labelText, options, placeholder }) {
+const FormSelect=({input,labelText, options, placeholder }) => {
     return (
         <FormField>
             <Label labelText={labelText}/>
@@ -24,3 +24,5 @@ FormSelect.propTypes = {
     labelText:PropTypes.string,
     options:PropTypes.array
 }
+
+export default FormSelect;

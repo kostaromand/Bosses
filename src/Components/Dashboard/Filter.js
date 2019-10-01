@@ -12,11 +12,11 @@ const Filter = ({filterState, toggleFilter}) => {
         <div className="boss-page-dashboard__filter">
             <div className="boss-dropdown">
                 <div className="boss-dropdown__header">
-                    <a href="#"
+                    <a href="/"
                         onClick={toggleFilter}
                         className={
                             "boss-dropdown__switch boss-dropdown__switch_role_filter " +
-                            (filterState ? filterStateClass : "")
+                            (filterState && filterStateClass)
 
                         }>
                         Filter

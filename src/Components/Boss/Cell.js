@@ -17,6 +17,4 @@ Cell.propTypes = {
     ])
 }
 
-export default Cell
-
-
+export default Cell;

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function Select({input, options, placeholder }) {
+const Select = ({input, options, placeholder }) => {
     return (
         <div className="boss-form__select">
             <div className="Select Select--single is-open" style={{ overflow: "visible" }}>
@@ -38,3 +38,5 @@ Select.propTypes = {
     options: PropTypes.array.isRequired,
     placeholder: PropTypes.string.isRequired
 }
+
+export default Select;

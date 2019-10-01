@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function Link({ children }) {
+const Link = ({ children }) => {
     return (
-        <>
-            <a href="#" className="boss-table__link">{children}</a>
-        </>
+        <a href="/" className="boss-table__link">
+            {children}
+        </a>
     )
 }
 
@@ -15,3 +15,5 @@ Link.propTypes = {
         PropTypes.node
     ])
 }
+
+export default Link;

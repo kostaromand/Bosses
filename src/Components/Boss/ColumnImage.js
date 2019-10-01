@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function ColumnImage({ imagePath }) {
+const ColumnImage = ({ imagePath }) => {
     return (
         <div className="boss-table__cell">
             <div className="boss-table__image">
-                <a href="#" className="boss-table__link">
+                <a href="/" className="boss-table__link">
                     <div className="boss-avatar boss-avatar_type_combined boss-avatar_type_scannable">
-                        <img src={imagePath} className="boss-avatar__image" />
+                        <img src={imagePath} alt="Avatar" className="boss-avatar__image" />
                     </div>
                 </a>
             </div>
@@ -18,3 +18,5 @@ export default function ColumnImage({ imagePath }) {
 ColumnImage.propTypes = {
     imagePath: PropTypes.string.isRequired
 }
+
+export default ColumnImage;

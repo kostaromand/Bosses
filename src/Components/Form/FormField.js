@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function FormField({children, classes}) {
+const FormField = ({children, classes}) => {
     return (
         <div className={`boss-form__field ${classes}`}>
             {children}
@@ -13,4 +13,4 @@ FormField.propTypes = {
     classes:PropTypes.string
 }
 
-
+export default FormField;

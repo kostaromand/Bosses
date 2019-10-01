@@ -5,7 +5,7 @@ import {bindActionCreators} from "redux"
 const CloseButton = ({ toggleSearch }) => {
     return (
         <a
-            href="#"
+            href="/"
             className="boss-page-header__dropdown-label boss-page-header__dropdown-label_role_action boss-page-header__dropdown-label_role_close boss-page-header__dropdown-label_type_icon"
             onClick={toggleSearch}
         >

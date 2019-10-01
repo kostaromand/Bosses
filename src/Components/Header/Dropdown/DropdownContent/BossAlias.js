@@ -5,7 +5,7 @@ const BossAlias = ({ iconStyle, aliasStyle, iconName, aliasText }) => {
     return (
         <div className="boss-quick-access__alias">
             <div className="boss-alias">
-                <a href="#" className="boss-alias__link">
+                <a href="/" className="boss-alias__link">
                     <span className="boss-alias__icon boss-alias__icon_type_solid" style={iconStyle}>
                         {iconName}
                     </span>

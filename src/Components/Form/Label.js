@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function Label({labelText, children}) {
+const Label= ({labelText, children}) => {
     return (
         <label className="boss-form__label">
             <span className="boss-form__label-text">{labelText}</span>
@@ -14,3 +14,4 @@ Label.propTypes = {
     labelText: PropTypes.string
 }
 
+export default Label;

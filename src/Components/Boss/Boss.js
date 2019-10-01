@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Column from './Column'
 import ColumnImage from './ColumnImage';
 import Link from './Link';
 import AccessorList from './AccessorList';
 import PropTypes from 'prop-types'
 
-export default function Boss({data}) {
+const Boss = ({data}) => {
     const { image, name, accessories, modified, status, type, masterVenue, workVenues } = data;
     return (
         <div className="boss-table__row">
@@ -44,3 +44,5 @@ export default function Boss({data}) {
 Boss.propTypes = {
     data: PropTypes.object
 }
+
+export default Boss;

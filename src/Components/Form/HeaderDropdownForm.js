@@ -10,7 +10,7 @@ const HeaderDropdownForm = () => {
             onSubmit={() => { }}
             render={() =>
                 (<form action="#" className="boss-form">
-                    <FormField style="boss-form__field boss-form__field_position_last">
+                    <FormField classes="boss-form__field boss-form__field_position_last">
                         <Label>
                             <Field
                                 name="search"
