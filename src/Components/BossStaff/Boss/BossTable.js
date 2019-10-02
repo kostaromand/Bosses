@@ -1,6 +1,6 @@
 import React from 'react'
 import Boss from './Boss'
-import { bossData } from "../../data";
+import { bossData } from "../../../data"
 import Cell from './Cell';
 
 const headerNames = [

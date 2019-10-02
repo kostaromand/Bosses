@@ -2,10 +2,10 @@ import React from 'react'
 import Column from './Column'
 import ColumnImage from './ColumnImage';
 import Link from './Link';
-import AccessorList from './AccessorList';
+import { AccessorList } from '../../Accessories';
 import PropTypes from 'prop-types'
 
-const Boss = ({data}) => {
+const Boss = ({ data }) => {
     const { image, name, accessories, modified, status, type, masterVenue, workVenues } = data;
     return (
         <div className="boss-table__row">
