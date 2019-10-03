@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-const Link = ({ children }) => {
+const BossLink = ({ children, to }) => {
     return (
-        <a href="/" className="boss-table__link">
+        <Link to={to} className="boss-table__link">
             {children}
-        </a>
+        </Link>
     )
 }
 
@@ -16,4 +17,4 @@ Link.propTypes = {
     ])
 }
 
-export default Link;
+export default BossLink;

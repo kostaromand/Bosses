@@ -4,11 +4,11 @@ import Label from './Label'
 import ReactSelect from 'react-select'
 import PropTypes from 'prop-types'
 
-const FormSelect=({input,labelText, options, placeholder }) => {
+const FormSelect = ({ input, labelText, options, placeholder, fieldClasses }) => {
     return (
-        <FormField>
-            <Label labelText={labelText}/>
-            <ReactSelect {...input} options = {options} placeholder = {placeholder}/>
+        <FormField classes={fieldClasses}>
+            <Label labelText={labelText} />
+            <ReactSelect {...input} options={options} placeholder={placeholder} />
         </FormField>
     )
 }
@@ -16,13 +16,13 @@ const FormSelect=({input,labelText, options, placeholder }) => {
 FormSelect.propTypes = {
     input: PropTypes.shape(
         {
-            type:PropTypes.string,
-            onChange:PropTypes.func,
-            name:PropTypes.string
+            type: PropTypes.string,
+            onChange: PropTypes.func,
+            name: PropTypes.string
         }
     ).isRequired,
-    labelText:PropTypes.string,
-    options:PropTypes.array
+    labelText: PropTypes.string,
+    options: PropTypes.array
 }
 
 export default FormSelect;

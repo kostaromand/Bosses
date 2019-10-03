@@ -1,7 +1,7 @@
 import React from 'react'
 import Column from './Column'
 import ColumnImage from './ColumnImage';
-import Link from './Link';
+import BossLink from './BossLink';
 import { AccessorList } from '../../Accessories';
 import PropTypes from 'prop-types'
 
@@ -11,7 +11,7 @@ const Boss = ({ data }) => {
         <div className="boss-table__row">
             <ColumnImage imagePath={image} />
             <Column>
-                <Link>{name}</Link>
+                <BossLink to="/">{name}</BossLink>
             </Column>
             <Column>
                 <AccessorList accessories={accessories} />
@@ -29,13 +29,13 @@ const Boss = ({ data }) => {
                 </button>
             </Column>
             <Column>
-                <Link>{type}</Link>
+                <BossLink to="/">{type}</BossLink>
             </Column>
             <Column>
-                <Link>{masterVenue}</Link>
+                <BossLink to="/">{masterVenue}</BossLink>
             </Column>
             <Column>
-                <Link>{workVenues}</Link>
+                <BossLink to="/">{workVenues}</BossLink>
             </Column>
         </div>
     )
