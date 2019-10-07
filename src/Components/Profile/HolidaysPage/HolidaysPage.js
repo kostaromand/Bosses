@@ -7,10 +7,10 @@ const HolidaysPage = () => {
         <section className="boss-board">
             <header className="boss-board__header">
                 <h2 className="boss-board__title">Holidays and holiday requests</h2>
-                <HeaderButton/>
+                <HeaderButton />
             </header>
             <div className="boss-board__main">
-                <Board/>
+                <Board />
             </div>
         </section>
 

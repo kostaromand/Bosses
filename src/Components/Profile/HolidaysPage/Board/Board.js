@@ -5,7 +5,7 @@ import Filter from './Filter'
 const Board = () => {
     return (
         <div className="boss-board__manager">
-            <div class="boss-board__manager-stats boss-board__manager-stats_layout_row">
+            <div className="boss-board__manager-stats boss-board__manager-stats_layout_row">
                 <BoardStat number={6} label="something" />
                 <BoardStat number={6} label="something" />
                 <BoardStat number={6} label="something" />

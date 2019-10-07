@@ -1,8 +1,11 @@
 import React from 'react';
 import Header from './Header'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Profile from './Profile';
-import BossStaff from './BossStaff/BossStaff';
+import BossStaff from './BossStaff';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
+import '../CSS/index.css';
 
 const App = () => {
   return (

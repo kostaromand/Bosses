@@ -8135,15 +8135,14 @@ button.rbc-input::-moz-focus-inner {
 .DateInput--disabled {
   background: #cacccd; }
 
-.DateInput__input {
-  opacity: 0;
+.DateInput_input {
   position: absolute;
   top: 0;
   left: 0;
   border: 0;
   height: 100%;
   width: 100%; }
-  .DateInput__input[readonly] {
+  .DateInput_input[readonly] {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -41650,14 +41649,14 @@ html {
     @media screen and (max-width: 400px) {
       .date-range-picker .DateRangePickerInput {
         white-space: nowrap; } }
-  .date-range-picker .DateRangePickerInput__arrow svg {
+  .date-range-picker .DateRangePickerInput_arrow svg {
     display: none; }
-  .date-range-picker .DateRangePickerInput__arrow:before {
+  .date-range-picker .DateRangePickerInput_arrow:before {
     content: "\2014";
     display: inline-block;
     font-weight: 600; }
     @media screen and (max-width: 480px) {
-      .date-range-picker .DateRangePickerInput__arrow:before {
+      .date-range-picker .DateRangePickerInput_arrow:before {
         content: "\2013"; } }
   .date-range-picker .DateRangePickerInput__clear-dates {
     margin: 0;
@@ -41686,7 +41685,7 @@ html {
         width: 110px;
         padding-right: 15px;
         padding-left: 15px; } }
-  .date-range-picker .DateInput__input {
+  .date-range-picker .DateInput_input {
     position: absolute;
     top: 0;
     left: 0;
@@ -41702,7 +41701,7 @@ html {
     border-color: transparent;
     box-shadow: none; }
     @media screen and (max-width: 480px) {
-      .date-range-picker .DateInput__input {
+      .date-range-picker .DateInput_input {
         padding-right: 15px;
         padding-left: 15px; } }
   .date-range-picker .DateInput__display-text {
@@ -41790,11 +41789,11 @@ html {
     .date-range-picker_type_interval-fluid.date-range-picker_no-label {
       padding-top: 25px; } }
   .date-range-picker_type_icon .DateInput,
-  .date-range-picker_type_icon .DateInput__input {
+  .date-range-picker_type_icon .DateInput_input {
     padding-left: 45px; }
     @media screen and (max-width: 480px) {
       .date-range-picker_type_icon .DateInput,
-      .date-range-picker_type_icon .DateInput__input {
+      .date-range-picker_type_icon .DateInput_input {
         padding-left: 40px; } }
   .date-range-picker_type_icon .DateInput {
     min-width: 150px;
@@ -41828,10 +41827,10 @@ html {
     .date-range-picker_type_icon.date-range-picker_type_interval .DateInput:after {
       display: none; } }
   @media screen and (max-width: 400px) {
-    .date-range-picker_type_icon.date-range-picker_type_interval .DateInput__input {
+    .date-range-picker_type_icon.date-range-picker_type_interval .DateInput_input {
       padding-left: 15px; } }
   @media screen and (max-width: 400px) {
-    .date-range-picker_type_icon.date-range-picker_type_interval .DateInput__input,
+    .date-range-picker_type_icon.date-range-picker_type_interval .DateInput_input,
     .date-range-picker_type_icon.date-range-picker_type_interval .DateInput__display-text {
       letter-spacing: -1px; } }
   @media screen and (max-width: 350px) {
@@ -41847,12 +41846,12 @@ html {
       width: 80px; } }
   @media screen and (max-width: 480px) {
     .date-range-picker_adjust_control .DateInput,
-    .date-range-picker_adjust_control .DateInput__input {
+    .date-range-picker_adjust_control .DateInput_input {
       padding-left: 10px;
       padding-right: 10px; } }
   @media screen and (max-width: 400px) {
     .date-range-picker_adjust_control .DateInput,
-    .date-range-picker_adjust_control .DateInput__input {
+    .date-range-picker_adjust_control .DateInput_input {
       padding-right: 5px;
       padding-left: 5px; } }
   @media screen and (max-width: 400px) {
@@ -41863,7 +41862,7 @@ html {
       min-width: 120px; } }
   @media screen and (min-width: 961px) and (max-width: 1280px) {
     .date-range-picker_adjust_third .DateInput,
-    .date-range-picker_adjust_third .DateInput__input {
+    .date-range-picker_adjust_third .DateInput_input {
       padding-left: 10px;
       padding-right: 10px; } }
   @media screen and (min-width: 961px) and (max-width: 1120px) {
@@ -41871,7 +41870,7 @@ html {
       letter-spacing: -1px; } }
   @media screen and (min-width: 961px) and (max-width: 1280px) {
     .date-range-picker_adjust_third.date-range-picker_type_icon .DateInput,
-    .date-range-picker_adjust_third.date-range-picker_type_icon .DateInput__input {
+    .date-range-picker_adjust_third.date-range-picker_type_icon .DateInput_input {
       padding-left: 30px; } }
   @media screen and (min-width: 961px) and (max-width: 1280px) {
     .date-range-picker_adjust_third.date-range-picker_type_icon .DateInput:after {
