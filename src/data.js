@@ -115,4 +115,36 @@ const aliasData = [
     },
 ]
 
-export { bossData, aliasData }
+const holidaysData = [
+    {
+        id: 0,
+        isFrozen: false,
+        type: "Something",
+        status: {
+            type: "rejected",
+            text: "rejected"
+        },
+        dates: "smth",
+        note: "smth",
+        payslipDate: "adasd",
+        canEdit: true,
+        canDelete: true
+    },
+    {
+        id: 1,
+        isFrozen: true,
+        type: "Something",
+        status: {
+            type: "rejected",
+            text: "rejected"
+        },
+        dates: "smth",
+        note: "smth",
+        payslipDate: "adasd",
+        canEdit: true,
+        canDelete: true
+    }
+]
+
+
+export { bossData, aliasData, holidaysData }
