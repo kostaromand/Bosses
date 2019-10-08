@@ -8,8 +8,8 @@ import {Route, Switch } from 'react-router-dom'
 const Profile = () => {
     return (
         <Main
-            dashboard={ProfileDashboard}
-            content={() => (
+            Dashboard={ProfileDashboard}
+            Content={() => (
                 <Switch>
                     <Route exact path="/profile" component={ProfilePage} />
                     <Route path="/profile/holidays" component={HolidaysPage} />

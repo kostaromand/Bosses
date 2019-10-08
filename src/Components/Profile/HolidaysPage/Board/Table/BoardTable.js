@@ -4,7 +4,7 @@ import { Table, Row, CellHeader } from '../../../../Table'
 import { getHolidays } from '../../../../../redux/selectors'
 import { connect } from 'react-redux'
 import { toggleEditModal } from '../../../../../redux/reducers/modalWindows/actions'
-import { setHolidayInEdit } from '../../../../../redux/reducers/holidays/actions'
+import { setHolidayInEdit, deleteHoliday } from '../../../../../redux/reducers/holidays/actions'
 import { bindActionCreators } from 'redux'
 
 const columnHeaders = ["Types", "Status", "Dates", "Note", "Created", "Payslip Date", ""];
@@ -16,7 +16,7 @@ class BoardTable extends React.Component {
         setHolidayInEdit(id);
     }
     render = () => {
-        const { holidaysData } = this.props;
+        const { holidaysData,deleteHoliday } = this.props;
         return (
             <div className="boss-board__manager-table">
                 <Table classes="boss-table_page_smp-holiday-requests">
@@ -32,10 +32,10 @@ class BoardTable extends React.Component {
                     {
                         holidaysData.map((holiday, id) => (
                             <HolidayRow
-                                key={id}
+                                key={holiday.id}
                                 holiday={holiday}
-                                onEdit={()=>this.onHolidayEdit(holiday.id)}
-                                onDelete={() => { }}
+                                onEdit={() => this.onHolidayEdit(holiday.id)}
+                                onDelete={() => {deleteHoliday(holiday.id)}}
                             />
                         ))
                     }
@@ -55,7 +55,8 @@ const mapDispatchToProps = (dispatch) => (
     bindActionCreators(
         {
             toggleEditModal,
-            setHolidayInEdit
+            setHolidayInEdit,
+            deleteHoliday
         },
         dispatch
     )

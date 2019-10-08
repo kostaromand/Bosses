@@ -20,9 +20,7 @@ class HolidaysPage extends React.Component {
         console.log(holiday)
     }
     render = () => {
-        
         const { editModalFlag, toggleEditModal, holidayInEdit } = this.props;
-        console.log(holidayInEdit)
         const isModalOpen = editModalFlag;
         return (
             <>
@@ -32,7 +30,12 @@ class HolidaysPage extends React.Component {
                     onRequestClose={toggleEditModal}
                     className="boss-modal-window boss-modal-window_role_edit"
                 >
-                    <HolidayEditModal onSubmit={this.onHolidayChange} holiday={holidayInEdit} />
+                    <HolidayEditModal
+                        onSubmit={this.onHolidayChange}
+                        holiday={holidayInEdit}
+                        buttonText="Update"
+                        headerText="Edit Holiday"
+                    />
                 </Modal>
                 <section className="boss-board">
                     <header className="boss-board__header">
@@ -65,6 +68,5 @@ const mapDispatchToProps = (dispatch) => (
         dispatch
     )
 )
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(HolidaysPage);

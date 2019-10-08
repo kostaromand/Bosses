@@ -1,7 +1,8 @@
 import {
     HOLIDAY_IN_EDIT_SET,
     HOLIDAY_UPDATE,
-    HOLIDAYS_SET
+    HOLIDAYS_SET,
+    HOLIDAY_DELETE
 } from './types'
 
 const initialState = {
@@ -13,6 +14,7 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case HOLIDAYS_SET:
             return {
+                ...state,
                 holidaysData: action.holidays
             }
         case HOLIDAY_IN_EDIT_SET:
@@ -24,9 +26,14 @@ export default (state = initialState, action) => {
             const newHoliday = action.payload;
             return {
                 ...state,
-                holidays: state.holidays.map(holiday => (
+                holidaysData: state.holidaysData.map(holiday => (
                     holiday.id == newHoliday.id ? newHoliday : holiday
                 ))
+            }
+        case HOLIDAY_DELETE:
+            return {
+                ...state,
+                holidays: state.holidaysData.filter(holiday => holiday.id !== action.payload)
             }
         default:
             return state;

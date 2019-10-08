@@ -2,7 +2,8 @@ import {
     HOLIDAYS_GET,
     HOLIDAYS_SET,
     HOLIDAY_IN_EDIT_SET,
-    HOLIDAY_UPDATE
+    HOLIDAY_UPDATE,
+    HOLIDAY_DELETE
 } from './types';
 import { holidaysData } from '../../../data'
 
@@ -21,6 +22,16 @@ export const updateHoliday = holiday => {
 
 export const updateHolidayThunk = holiday => dispatch => {
     dispatch(updateHoliday(holiday));
+    //send to backend
+}
+
+export const deleteHoliday = id => {
+    console.log(id)
+    return { type: HOLIDAY_DELETE, payload: id }
+}
+
+export const  deleteHolidayThunk = id => dispatch => {
+    dispatch(deleteHoliday(id));
     //send to backend
 }
 

@@ -1,12 +1,12 @@
 import React from 'react'
 import MainContent from './MainContent'
 
-const Main = ({ dashboard, content }) => {
+const Main = ({ Dashboard, Content }) => {
     return (
         <main className="boss-page-main">
-            {dashboard()}
+            <Dashboard/>
             <MainContent>
-                {content()}
+                <Content/>
             </MainContent>
         </main>
     )
