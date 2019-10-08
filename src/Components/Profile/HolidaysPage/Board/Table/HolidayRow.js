@@ -8,7 +8,7 @@ const statusStyles = {
 }
 
 const HolidayRow = ({ holiday, onDelete, onEdit }) => {
-    const { isFrozen, type, status, dates, note, created, payslipDate, canEdit, canDelete } = holiday;
+    const {isFrozen, type, status, dates, note, created, payslipDate, canEdit, canDelete } = holiday;
     return (
         <Row classes={isFrozen && "boss-table__row_state_frozen"}>
             <Cell labelName="Types">

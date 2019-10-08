@@ -124,8 +124,8 @@ const holidaysData = [
             type: "rejected",
             text: "rejected"
         },
-        dates: "smth",
-        note: "smth",
+        dates: "1995-12-25",
+        note: "saamth",
         payslipDate: "adasd",
         canEdit: true,
         canDelete: true
@@ -138,8 +138,8 @@ const holidaysData = [
             type: "rejected",
             text: "rejected"
         },
-        dates: "smth",
-        note: "smth",
+        dates: "1995-12-25",
+        note: "smasdasdth",
         payslipDate: "adasd",
         canEdit: true,
         canDelete: true

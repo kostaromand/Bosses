@@ -1,10 +1,10 @@
 import React from 'react'
-import Column from './Column'
+import CellHeader from './CellHeader'
 import PropTypes from 'prop-types'
 
 const InfoGroupCell = ({ children, labelName, textStyle }) => {
     return (
-        <Column>
+        <CellHeader>
             <div className="boss-table__info">
                 <p className="boss-table__label">{labelName}</p>
                 <div className="boss-table__info-group">
@@ -13,7 +13,7 @@ const InfoGroupCell = ({ children, labelName, textStyle }) => {
                     </p>
                 </div>
             </div>
-        </Column>
+        </CellHeader>
     )
 }
 

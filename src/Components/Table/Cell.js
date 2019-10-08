@@ -1,17 +1,17 @@
 import React from 'react'
-import Column from './Column'
+import CellHeader from './CellHeader'
 import PropTypes from 'prop-types'
 
 const Cell = ({ children, labelName, textStyle }) => {
     return (
-        <Column>
+        <CellHeader>
             <div className="boss-table__info">
                 <p className="boss-table__label">{labelName}</p>
                 <p className={`boss-table__text ${textStyle}`}>
                     {children}
                 </p>
             </div>
-        </Column>
+        </CellHeader>
     )
 }
 

@@ -4,11 +4,17 @@ import Label from './Label'
 import ReactSelect from 'react-select'
 import PropTypes from 'prop-types'
 
-const FormSelect = ({ input, labelText, options, placeholder, fieldClasses }) => {
+const FormSelect = ({ input, labelText, options, placeholder, fieldClasses,style }) => {
     return (
         <FormField classes={fieldClasses}>
             <Label labelText={labelText} />
-            <ReactSelect {...input} options={options} placeholder={placeholder} />
+            <div className="boss-form__select" style={style}>
+                <ReactSelect
+                    className="Select-container"
+                    classNamePrefix="Select" {...input}
+                    options={options} placeholder={placeholder}
+                />
+            </div>
         </FormField>
     )
 }

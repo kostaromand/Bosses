@@ -1,20 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-const Cell = ({ children, classes }) => {
+const BossLink = ({ children, to, classes }) => {
     return (
-        <div className={`boss-table__cell ${classes}`}>
+        <Link to={to} className={`boss-table__link ${classes}`}>
             {children}
-        </div>
+        </Link>
     )
 }
 
-Cell.propTypes = {
-    classes: PropTypes.string,
+Link.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
     ])
 }
 
-export default Cell;
+export default BossLink;

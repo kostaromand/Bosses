@@ -1,0 +1,1 @@
+export const EDIT_MODAL_TOGGLE = "EDIT_MODAL_OPEN_TOGGLE";

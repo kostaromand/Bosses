@@ -54,12 +54,10 @@ const FinalForm = () => (
                                 options={options}
                                 type="select"
                                 placeholder="Any"
+                                component = {FormSelect}
+                                style={{marginTop:"-12px"}}
                             >
-                                {
-                                    ({ input, options, placeholder }) => (
-                                        <ReactSelect {...input} options={options} placeholder={placeholder} />
-                                    )
-                                }
+                               
                             </Field>
                         </FormField>
                         <Field

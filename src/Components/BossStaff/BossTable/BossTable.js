@@ -1,7 +1,7 @@
 import React from 'react'
-import Boss from './Boss'
+import BossRow from './BossRow'
 import { bossData } from "../../../data"
-import Cell from './Cell';
+import { CellHeader } from '../../Table';
 
 const headerNames = [
     "",
@@ -19,14 +19,14 @@ const BossTable = () => {
             <div className="boss-table__row">
                 {
                     headerNames.map(element => (
-                        <Cell key={element} classes="boss-table__cell_role_header">
+                        <CellHeader key={element} classes="boss-table__cell_role_header">
                             {element}
-                        </Cell>
+                        </CellHeader>
                     ))
                 }
             </div>
             {bossData.map((element, id) =>
-                <Boss key={id} data={element} />
+                <BossRow key={id} data={element} />
             )}
         </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import DashboardForm from "../Form/DashboardForm"
+import DashboardForm from "../../Form/DashboardForm"
 import PropTypes from 'prop-types'
 
 const DashboardFilterContent = ({ opened }) => {

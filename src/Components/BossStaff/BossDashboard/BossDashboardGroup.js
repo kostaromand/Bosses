@@ -1,7 +1,7 @@
 import React from 'react'
-import DashboardGroup from '../Dashboard/DashboardGroup'
+import DashboardGroup from '../../Dashboard/DashboardGroup'
 
-const BossStuffDashboardGroup = () => {
+const BossDashboardGroup = () => {
     return (
         <DashboardGroup>
             <h1 className="boss-page-dashboard__title">
@@ -15,4 +15,4 @@ const BossStuffDashboardGroup = () => {
     )
 }
 
-export default BossStuffDashboardGroup
+export default BossDashboardGroup

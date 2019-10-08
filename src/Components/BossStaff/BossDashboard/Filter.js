@@ -1,8 +1,8 @@
 import React from 'react'
 import FilterContent from './FilterContent'
 import { connect } from "react-redux"
-import { getFilterState } from "../../redux/selectors"
-import { toggleFilter } from "../../redux/reducers/filter/actions"
+import { getFilterState } from "../../../redux/selectors"
+import { toggleFilter } from "../../../redux/reducers/filter/actions"
 import { bindActionCreators } from 'redux'
 
         

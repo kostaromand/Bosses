@@ -1,12 +1,12 @@
 import React from 'react'
-import Dashboard from '../Dashboard'
+import Dashboard from '../../Dashboard'
 import Filter from './Filter'
-import BossStuffDashboardGroup from './BossStuffDashboardGroup'
+import BossDashboardGroup from './BossDashboardGroup'
 
 const BossStuffDashboard = () => {
     return (
         <Dashboard classes="boss-page-dashboard_page_staff-members-index">
-            <BossStuffDashboardGroup />
+            <BossDashboardGroup />
             <Filter />
         </Dashboard>
     )

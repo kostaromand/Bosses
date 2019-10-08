@@ -1,25 +1,32 @@
 import React from 'react'
-import Column from './Column'
-import ColumnImage from './ColumnImage';
-import BossLink from './BossLink';
+import BossLink from '../../Table/BossLink';
 import { AccessorList } from '../../Accessories';
 import PropTypes from 'prop-types'
+import { Row, CellHeader,Cell } from '../../Table';
 
 const Boss = ({ data }) => {
     const { image, name, accessories, modified, status, type, masterVenue, workVenues } = data;
     return (
-        <div className="boss-table__row">
-            <ColumnImage imagePath={image} />
-            <Column>
+        <Row>
+            <CellHeader>
+                <div className="boss-table__image">
+                    <BossLink to="/profile">
+                        <div className="boss-avatar boss-avatar_type_combined boss-avatar_type_scannable">
+                            <img src={image} alt="Avatar" className="boss-avatar__image" />
+                        </div>
+                    </BossLink>
+                </div>
+            </CellHeader>
+            <Cell>
                 <BossLink to="/">{name}</BossLink>
-            </Column>
-            <Column>
+            </Cell>
+            <Cell>
                 <AccessorList accessories={accessories} />
-            </Column>
-            <Column>
+            </Cell>
+            <Cell>
                 {modified}
-            </Column>
-            <Column>
+            </Cell>
+            <Cell>
                 <button
                     className={
                         (status === "Enabled" ? "boss-button_role_enabled" : "boss-button_role_disabled")
@@ -27,17 +34,17 @@ const Boss = ({ data }) => {
                     }>
                     {status}
                 </button>
-            </Column>
-            <Column>
+            </Cell>
+            <Cell>
                 <BossLink to="/">{type}</BossLink>
-            </Column>
-            <Column>
+            </Cell>
+            <Cell>
                 <BossLink to="/">{masterVenue}</BossLink>
-            </Column>
-            <Column>
+            </Cell>
+            <Cell>
                 <BossLink to="/">{workVenues}</BossLink>
-            </Column>
-        </div>
+            </Cell>
+        </Row>
     )
 }
 
