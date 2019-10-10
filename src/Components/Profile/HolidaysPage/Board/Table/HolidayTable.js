@@ -3,20 +3,20 @@ import HolidayRow from './HolidayRow';
 import { Table, Row, CellHeader } from '../../../../Table'
 import { getHolidays } from '../../../../../redux/selectors'
 import { connect } from 'react-redux'
-import { toggleEditModal } from '../../../../../redux/reducers/modalWindows/actions'
+import { openModal } from '../../../../../redux/reducers/modalWindows/actions'
 import { setHolidayInEdit, deleteHoliday } from '../../../../../redux/reducers/holidays/actions'
 import { bindActionCreators } from 'redux'
+import { EDIT_MODAL } from '../../../../../constants'
 
 const columnHeaders = ["Types", "Status", "Dates", "Note", "Created", "Payslip Date", ""];
-class BoardTable extends React.Component {
-
+class HolidayTable extends React.Component {
     onHolidayEdit = (id) => {
-        const { toggleEditModal, setHolidayInEdit } = this.props;
-        toggleEditModal();
+        const { openModal, setHolidayInEdit } = this.props;
+        openModal(EDIT_MODAL);
         setHolidayInEdit(id);
     }
     render = () => {
-        const { holidaysData,deleteHoliday } = this.props;
+        const { holidaysData, deleteHoliday } = this.props;
         return (
             <div className="boss-board__manager-table">
                 <Table classes="boss-table_page_smp-holiday-requests">
@@ -35,7 +35,7 @@ class BoardTable extends React.Component {
                                 key={holiday.id}
                                 holiday={holiday}
                                 onEdit={() => this.onHolidayEdit(holiday.id)}
-                                onDelete={() => {deleteHoliday(holiday.id)}}
+                                onDelete={() => { deleteHoliday(holiday.id) }}
                             />
                         ))
                     }
@@ -54,11 +54,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators(
         {
-            toggleEditModal,
+            openModal,
             setHolidayInEdit,
             deleteHoliday
         },
         dispatch
     )
 )
-export default connect(mapStateToProps, mapDispatchToProps)(BoardTable);
+export default connect(mapStateToProps, mapDispatchToProps)(HolidayTable);

@@ -2,7 +2,8 @@ import {
     HOLIDAY_IN_EDIT_SET,
     HOLIDAY_UPDATE,
     HOLIDAYS_SET,
-    HOLIDAY_DELETE
+    HOLIDAY_DELETE,
+    HOLIDAY_ADD
 } from './types'
 
 const initialState = {
@@ -33,7 +34,12 @@ export default (state = initialState, action) => {
         case HOLIDAY_DELETE:
             return {
                 ...state,
-                holidays: state.holidaysData.filter(holiday => holiday.id !== action.payload)
+                holidaysData: state.holidaysData.filter(holiday => holiday.id !== action.payload)
+            }
+        case HOLIDAY_ADD:
+            return {
+                ...state,
+                holidaysData: [...state.holidaysData, action.payload]
             }
         default:
             return state;

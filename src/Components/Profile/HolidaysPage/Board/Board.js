@@ -1,7 +1,7 @@
 import React from 'react'
 import BoardStat from './BoardStat'
 import Filter from './Filter'
-import BoardTable from './Table/BoardTable'
+import HolidayTable from './Table/HolidayTable'
 
 const Board = () => {
     return (
@@ -13,7 +13,7 @@ const Board = () => {
             </div>
             <div className="boss-board__manager-group boss-board__manager-group_role_data">
                 <Filter />
-                <BoardTable/>
+                <HolidayTable/>
             </div>
         </div>
     )

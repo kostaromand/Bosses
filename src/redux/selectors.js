@@ -7,7 +7,7 @@ export const getSearchToggleState = (state) => {
 }
 
 export const getProfileData = (state) => {
-    return state.profile.data;
+    return state.profile.profileData;
 }
 
 export const getTabs = (state) => {
@@ -18,8 +18,8 @@ export const getActiveTab = (state) => {
     return state.tabs.activeTab
 }
 
-export const getEditModalFlag = (state) => {
-    return state.modalWindows.editModalFlag;
+export const getOpenedModalName = (state) => {
+    return state.modalWindows.openedModalName;
 }
 
 export const getHolidays = (state) => {
@@ -29,4 +29,8 @@ export const getHolidays = (state) => {
 export const getHolidayInEdit = (state) => {
     const id =  state.holidays.holidayInEditId;
     return state.holidays.holidaysData[id];
+}
+
+export const getProfileDataLoadingStatus = (state) => {
+    return state.profile.isProfileDataLoaded;
 }

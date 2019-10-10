@@ -1,14 +1,21 @@
-import { EDIT_MODAL_TOGGLE } from './types';
+import {
+    MODAL_CLOSE,
+    MODAL_OPEN
+} from './types';
 
 const initialState = {
-    editModalFlag:false
+    openedModalName: null
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case EDIT_MODAL_TOGGLE:
+        case MODAL_CLOSE:
             return {
-                editModalFlag:!state.editModalFlag
+                openedModalName: null
+            }
+        case MODAL_OPEN:
+            return {
+                openedModalName: action.payload
             }
         default:
             return state;

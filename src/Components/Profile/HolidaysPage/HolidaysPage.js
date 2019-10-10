@@ -1,69 +1,31 @@
 import React from 'react'
 import HeaderButton from './HeaderButton'
 import Board from './Board'
-import Modal from 'react-modal'
 import { connect } from 'react-redux'
-import { getEditModalFlag } from '../../../redux/selectors'
-import { toggleEditModal } from '../../../redux/reducers/modalWindows/actions'
-import { fetchHolidaysThunk as fetchHolidays } from '../../../redux/reducers/holidays/actions'
-import { getHolidayInEdit } from '../../../redux/selectors'
+import { openModal } from '../../../redux/reducers/modalWindows/actions'
 import { bindActionCreators } from 'redux'
-import HolidayEditModal from '../../Modals/HolidayEditModal'
+import { ADD_MODAL } from '../../../constants'
 
-class HolidaysPage extends React.Component {
-    componentWillMount = () => {
-        const { fetchHolidays } = this.props;
-        fetchHolidays();
-    }
-
-    onHolidayChange = (holiday) => {
-        console.log(holiday)
-    }
-    render = () => {
-        const { editModalFlag, toggleEditModal, holidayInEdit } = this.props;
-        const isModalOpen = editModalFlag;
-        return (
-            <>
-                <Modal
-                    ariaHideApp={false}
-                    isOpen={isModalOpen}
-                    onRequestClose={toggleEditModal}
-                    className="boss-modal-window boss-modal-window_role_edit"
-                >
-                    <HolidayEditModal
-                        onSubmit={this.onHolidayChange}
-                        holiday={holidayInEdit}
-                        buttonText="Update"
-                        headerText="Edit Holiday"
-                    />
-                </Modal>
-                <section className="boss-board">
-                    <header className="boss-board__header">
-                        <h2 className="boss-board__title">Holidays and holiday requests</h2>
-                        <HeaderButton />
-                    </header>
-                    <div className="boss-board__main">
-                        <Board />
-                    </div>
-                </section>
-            </>
-        )
-    }
-
+const HolidaysPage = ({ openModal }) => {
+    return (
+        <section className="boss-board">
+            <header className="boss-board__header">
+                <h2 className="boss-board__title">Holidays and holiday requests</h2>
+                <HeaderButton onClick={() => { openModal(ADD_MODAL) }} />
+            </header>
+            <div className="boss-board__main">
+                <Board />
+            </div>
+        </section>
+    )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        editModalFlag: getEditModalFlag(state),
-        holidayInEdit: getHolidayInEdit(state)
-    }
-}
+const mapStateToProps = null
 
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators(
         {
-            toggleEditModal,
-            fetchHolidays
+            openModal
         },
         dispatch
     )

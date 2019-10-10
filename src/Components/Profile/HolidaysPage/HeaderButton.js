@@ -1,9 +1,9 @@
 import React from 'react'
 
-const HeaderButton = () => {
+const HeaderButton = ({onClick}) => {
     return (
         <div className="boss-board__button-group">
-            <p className="boss-button boss-button_role_add">Add Holiday</p>
+            <p onClick={onClick} className="boss-button boss-button_role_add">Add Holiday</p>
         </div>
     )
 }

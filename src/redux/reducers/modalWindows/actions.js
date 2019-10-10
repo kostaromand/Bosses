@@ -1,7 +1,14 @@
-import {EDIT_MODAL_TOGGLE} from './types';
+import {
+    MODAL_CLOSE,
+    MODAL_OPEN
+} from './types';
 
-export const toggleEditModal = () => {
+export const openModal = (modalName) => {
+    return { type: MODAL_OPEN, payload: modalName }
+}
+
+export const closeModal = () => {
     return {
-        type: EDIT_MODAL_TOGGLE
+        type: MODAL_CLOSE
     }
 }

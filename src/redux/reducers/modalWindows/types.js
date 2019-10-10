@@ -1,1 +1,2 @@
-export const EDIT_MODAL_TOGGLE = "EDIT_MODAL_OPEN_TOGGLE";
+export const MODAL_CLOSE = "MODAL_CLOSE"
+export const MODAL_OPEN = "MODAL_OPEN"
