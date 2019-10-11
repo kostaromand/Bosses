@@ -10,9 +10,10 @@ const FormSelect = ({ input, labelText, options, placeholder, fieldClasses, styl
             <Label labelText={labelText} />
             <div className="boss-form__select" style={style}>
                 <ReactSelect
+                    {...input}
                     className="Select-container"
                     classNamePrefix="Select"
-                    value = {options.filter(option => option.label === input.value)}
+                    defaultValue = {options.filter(option => option.label === input.value)}
                     options={options}
                     placeholder={placeholder}
                 />
