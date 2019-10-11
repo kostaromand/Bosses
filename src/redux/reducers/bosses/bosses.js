@@ -1,15 +1,17 @@
-import { FILTER_TOGGLE } from './types';
+import {
+    BOSSES_SET
+} from './types'
 
 const initialState = {
-    filterState: false
+    bossesData:[]
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case FILTER_TOGGLE:
-            
+        case BOSSES_SET:
             return {
-                filterState:!state.filterState
+                ...state,
+                bossesData: action.payload
             }
         default:
             return state;

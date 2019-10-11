@@ -1,11 +1,8 @@
 import React from 'react'
 import { Form, Field } from 'react-final-form'
-import FormInput from './FormInput';
-import FormSelect from './FormSelect';
-import FormField from './FormField';
+import { FormInput, FormSelect, FormField } from '../../Form/Components';
+import { Button } from "../../Form/UI"
 import DashboardLabelGroup from './DashboardLabelGroup';
-import ReactSelect from 'react-select'
-import Button from "./UI/Button"
 
 const onSubmit = (value) => {
     alert(JSON.stringify(value));
@@ -33,10 +30,10 @@ const FinalForm = () => (
                         <Field
                             name="status"
                             options={options}
-                        
-                        labelText="Status"
-                        type="select"
-                        placeholder="Any"
+
+                            labelText="Status"
+                            type="select"
+                            placeholder="Any"
                             component={FormSelect} />
                     </div>
                     <div className="boss-form__group boss-form__group_layout_half">
@@ -54,10 +51,10 @@ const FinalForm = () => (
                                 options={options}
                                 type="select"
                                 placeholder="Any"
-                                component = {FormSelect}
-                                style={{marginTop:"-12px"}}
+                                component={FormSelect}
+                                style={{ marginTop: "-12px" }}
                             >
-                               
+
                             </Field>
                         </FormField>
                         <Field

@@ -4,7 +4,7 @@ import ProfileDashboard from './ProfileDashboard'
 import ProfilePage from './ProfilePage'
 import HolidaysPage from './HolidaysPage'
 import { Route, Switch } from 'react-router-dom'
-import { getHolidayInEdit, getOpenedModalName, getProfileDataLoadingStatus } from '../../redux/selectors'
+import { getHolidayInEdit, getOpenedModalName } from '../../redux/selectors'
 import { connect } from 'react-redux'
 import ReactModal from 'react-modal'
 import { closeModal } from '../../redux/reducers/modalWindows/actions'
@@ -12,13 +12,14 @@ import { bindActionCreators } from 'redux'
 import { HolidayModal, EditAvatarModal, Modal } from '../Modals'
 import { EDIT_MODAL, ADD_MODAL, EDIT_AVATAR_MODAL } from '../../constants'
 import { fetchHolidaysThunk as fetchHolidays } from '../../redux/reducers/holidays/actions'
+import { fetchUserDataThunk as fetchUserData } from '../../redux/reducers/user/actions'
 import { fetchProfileDataThunk as fetchProfileData } from '../../redux/reducers/profile/actions'
 
 class Profile extends React.Component {
-
     componentDidMount = () => {
-        const { fetchHolidays, fetchProfileData } = this.props;
+        const { fetchHolidays, fetchUserData,fetchProfileData } = this.props;
         fetchHolidays();
+        fetchUserData();
         fetchProfileData();
     }
 
@@ -27,6 +28,7 @@ class Profile extends React.Component {
             openedModalName,
             holidayInEdit
         } = this.props
+
         switch (openedModalName) {
             case EDIT_MODAL:
                 return (
@@ -52,7 +54,7 @@ class Profile extends React.Component {
                     <Modal headerText="Edit Avatar">
                         <EditAvatarModal
                             headerText="Edit Avatar"
-                            onSubmit={(value) => {console.log(value)}}
+                            onSubmit={(value) => { console.log(value) }}
                         />
                     </Modal>
                 )
@@ -73,7 +75,6 @@ class Profile extends React.Component {
         const {
             closeModal,
             openedModalName,
-            isProfileDataLoaded,
         } = this.props
         return (
             <>
@@ -86,14 +87,7 @@ class Profile extends React.Component {
                     {this.getModalContext()}
                 </ReactModal>
                 <Main
-                    Dashboard={
-                        isProfileDataLoaded ?
-                            ProfileDashboard
-                            :
-                            () => (
-                                <div>Loading</div>
-                            )
-                    }
+                    Dashboard={ProfileDashboard}
                     Content={() => (
                         <Switch>
                             <Route exact path="/profile" component={ProfilePage} />
@@ -108,7 +102,6 @@ class Profile extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        isProfileDataLoaded: getProfileDataLoadingStatus(state),
         holidayInEdit: getHolidayInEdit(state),
         openedModalName: getOpenedModalName(state)
     }
@@ -119,6 +112,7 @@ const mapDispatchToProps = (dispatch) => (
         {
             closeModal,
             fetchHolidays,
+            fetchUserData,
             fetchProfileData
         },
         dispatch

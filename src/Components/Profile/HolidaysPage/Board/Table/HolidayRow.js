@@ -23,9 +23,6 @@ const HolidayRow = ({ holiday, onDelete, onEdit }) => {
             <Cell labelName="Note">
                 {note}
             </Cell>
-            <Cell labelName="Created">
-                {note}
-            </Cell>
             <InfoGroupCell>
                 <span className="boss-table__text-line">
                     <span className="boss-table__text-label">Requested: </span>

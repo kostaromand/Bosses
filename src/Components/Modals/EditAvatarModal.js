@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Field } from 'react-final-form'
-import FormField from '../Form/FormField'
+import { FormField } from '../Form/Components'
 import { CheckBox } from '../Form/UI'
 import EditAvatarDiscription from './EditAvatarDiscription'
 import FileUploader from './FileUploader'
@@ -40,7 +40,7 @@ const EditAvatarModal = ({ onSubmit }) => {
                                 </p>
                             </div>
                             <EditAvatarDiscription />
-                            <button type = "submit">
+                            <button type="submit">
                                 adsadasd
                             </button>
                         </div>

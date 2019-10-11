@@ -1,14 +1,16 @@
-import { SEARCH_TOGGLE } from './types';
+import { USER_DATA_SET } from './types';
 
 const initialState = {
-    searchState: false
+    userData:{
+        accessories:[]
+    }
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case SEARCH_TOGGLE:            
+        case USER_DATA_SET:
             return {
-                searchState:!state.searchState
+                userData: action.payload,
             }
         default:
             return state;

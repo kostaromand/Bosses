@@ -1,3 +1,5 @@
 import Input from "./Input";
 import CheckBox from './CheckBox'
-export { Input, CheckBox }
+import Button from './Button'
+import Textarea from './Textarea'
+export { Input, CheckBox, Button, Textarea }

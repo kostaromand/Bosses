@@ -1,15 +1,15 @@
-import { PROFILE_DATA_GET } from './types';
+import { PROFILE_DATA_SET } from './types';
 import { profileData } from '../../../data'
 
 export const fetchProfileDataThunk = () => dispatch => {
     Promise.resolve(profileData).then(data => {
-        dispatch(fetchProfileData(data))
+        dispatch(setProfileData(data))
     });
 }
 
-export const fetchProfileData = (data) => {
+export const setProfileData = (data) => {
     return {
-        type: PROFILE_DATA_GET,
+        type: PROFILE_DATA_SET,
         payload:data
     }
 }

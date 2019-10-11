@@ -1,1 +1,1 @@
-export const PROFILE_DATA_GET = "PROFILE_DATA_GET";
+export const PROFILE_DATA_SET = "PROFILE_DATA_SET";

@@ -1,7 +1,7 @@
 import React from 'react'
 import FormField from './FormField'
 import Label from './Label'
-import { Input } from './UI'
+import { Input } from '../UI'
 import PropTypes from 'prop-types'
 
 const FormInput = ({ input, labelText }) => {

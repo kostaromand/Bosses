@@ -1,13 +1,6 @@
-export const getFilterState = (state) => {
-    return state.filter.filterState;
-}
 
-export const getSearchToggleState = (state) => {
-    return state.header.searchState;
-}
-
-export const getProfileData = (state) => {
-    return state.profile.profileData;
+export const getUserData = (state) => {
+    return state.user.userData;
 }
 
 export const getTabs = (state) => {
@@ -27,10 +20,14 @@ export const getHolidays = (state) => {
 }
 
 export const getHolidayInEdit = (state) => {
-    const id =  state.holidays.holidayInEditId;
+    const id = state.holidays.holidayInEditId;
     return state.holidays.holidaysData[id];
 }
 
-export const getProfileDataLoadingStatus = (state) => {
-    return state.profile.isProfileDataLoaded;
+export const getBossesData = (state) => {
+    return state.bosses.bossesData;
+}
+
+export const getProfileData = (state) => {
+    return state.profile.profileData;
 }

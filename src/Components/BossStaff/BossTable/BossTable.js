@@ -1,19 +1,18 @@
 import React from 'react'
 import BossRow from './BossRow'
-import { bossData } from "../../../data"
 import { CellHeader } from '../../Table';
 
 const headerNames = [
     "",
     "Name",
     "Accessories",
-    "Modified,Status",
+    "Modified Status",
     "Type",
     "Master",
     "Venue",
     "Work Venues"];
 
-const BossTable = () => {
+const BossTable = ({bossesData}) => {
     return (
         <div className="boss-table boss-table_page_staff-members-index">
             <div className="boss-table__row">
@@ -25,7 +24,7 @@ const BossTable = () => {
                     ))
                 }
             </div>
-            {bossData.map((element, id) =>
+            {bossesData.map((element, id) =>
                 <BossRow key={id} data={element} />
             )}
         </div>

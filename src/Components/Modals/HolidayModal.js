@@ -1,11 +1,7 @@
 import React from 'react'
 import { Form, Field } from 'react-final-form'
-import Label from '../Form/Label'
-import DatePicker from '../Form/DatePicker'
-import FormSelect from '../Form/FormSelect'
-import FormField from '../Form/FormField'
-import Textarea from '../Form/UI/Textarea'
-import Button from '../Form/UI/Button'
+import { Label, DatePicker, FormSelect, FormField } from '../Form/Components'
+import { Textarea, Button } from '../Form/UI'
 
 const options = [
     { label: "Unpaid Holiday", value: "unpaidHoliday" },

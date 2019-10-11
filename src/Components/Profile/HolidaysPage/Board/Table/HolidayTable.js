@@ -20,7 +20,7 @@ class HolidayTable extends React.Component {
         return (
             <div className="boss-board__manager-table">
                 <Table classes="boss-table_page_smp-holiday-requests">
-                    <Row classes=" boss-table_page_smp-holiday-requests">
+                    <Row>
                         {
                             columnHeaders.map(header => (
                                 <CellHeader key={header} classes="boss-table__cell_role_header">

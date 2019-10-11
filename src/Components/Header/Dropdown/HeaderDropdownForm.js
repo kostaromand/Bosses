@@ -1,8 +1,7 @@
 import React from 'react';
 import { Form, Field } from 'react-final-form'
-import { Input } from './UI'
-import FormField from './FormField'
-import Label from './Label'
+import { Input } from '../../Form/UI'
+import {FormField,Label} from '../../Form/Components'
 
 const HeaderDropdownForm = () => {
     return (

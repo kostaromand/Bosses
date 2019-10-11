@@ -57,7 +57,6 @@ const bossData = [
     }
 ]
 
-
 const aliasData = [
     {
         title: "Venue",
@@ -88,6 +87,7 @@ const aliasData = [
             }
         ]
     },
+
     {
         title: "StaffMembers",
         styles: {
@@ -146,7 +146,7 @@ const holidaysData = [
     }
 ]
 
-const profileData = {
+const userData = {
     avatar: "/images/avatar.jpg",
     fullName: "Trulla Collier",
     venue: "Some Venue",
@@ -172,4 +172,47 @@ const profileData = {
     ],
 }
 
-export { bossData, aliasData, holidaysData, profileData }
+const profileData = [
+    {
+        id: 0,
+        label: "single value",
+        isleId: 1,
+        value: [
+            {
+                type: "text",
+                content: "value"
+            }
+        ]
+    },
+    {
+        id: 1,
+        label: "multiple value",
+        isleId: 1,
+        value: [
+            {
+                type: "text",
+                content: "value 1"
+            },
+            {
+                type: "button",
+                content: {
+                    text: "value 2",
+                    role: "boss-button_role_exclamation"
+                }
+            },
+            {
+                type: "image",
+                content: {
+                    src: "/images/avatar.jpg",
+                    alt: "something"
+                }
+            }
+        ]
+    },
+    {
+        id: 2,
+        isleId: 6
+    },
+]
+
+export { bossData, aliasData, holidaysData, userData, profileData}
