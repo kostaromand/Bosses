@@ -2,11 +2,6 @@ const bossData = [
     {
         image: "/images/download.jpeg",
         name: "John Doe",
-        accessories: [
-            { color: "#2ecc71", count: 3, tooltip: { header: "aad", text: "adsd" } },
-            { type: "boss-indicator__icon_apron", color: "cd84f1", count: 3, tooltip: { header: "aad", text: "adsd" } },
-            { color: "", count: 3, tooltip: { header: "aad", text: "adsd" } },
-        ],
         modified: "01.01.01",
         status: "Enabled",
         type: "manager",
@@ -215,4 +210,14 @@ const profileData = [
     },
 ]
 
-export { bossData, aliasData, holidaysData, userData, profileData}
+const additionalData = {
+    accessories: [
+        { color: "#2ecc71", count: 3, tooltip: { header: "aad", text: "adsd" } },
+        { type: "boss-indicator__icon_apron", color: "cd84f1", count: 3, tooltip: { header: "aad", text: "adsd" } },
+        { color: "", count: 3, tooltip: { header: "aad", text: "adsd" } },
+    ],
+    modified: "01.01.01",
+    workVenues: "Something"
+}
+
+export { bossData, aliasData, holidaysData, userData, profileData, additionalData }

@@ -2,11 +2,7 @@ import IsleButton from "./IsleButton";
 import React from 'react';
 
 const TextComponent = ({ content }) => {
-    return (
-        <>
-            {content}
-        </>
-    )
+    return <>{content} </>
 }
 
 const ImageComponent = ({ content }) => {
@@ -54,7 +50,6 @@ const componentDictionary = {
 
 const getItemValueComponent = (value) => {
     if (typeof value === "undefined") {
-        const Component = componentDictionary["button"];
         return () => (
             <IsleButton text="View History" role="boss-button_role_view-history" />
         )

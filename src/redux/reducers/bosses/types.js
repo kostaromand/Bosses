@@ -1,2 +1,3 @@
-export const BOSSES_GET = "BOSSES_GET";
-export const BOSSES_SET = "BOSSES_SET";
+export const STAFF_MEMBERS_SET = "STAFF_MEMBERS_SET";
+export const STAFF_TYPES_SET = "STAFF_TYPES_SET";
+export const VENUES_SET = "VENUES_SET";

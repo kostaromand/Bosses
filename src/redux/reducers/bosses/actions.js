@@ -1,22 +1,31 @@
 import {
-    BOSSES_SET,
-    BOSSES_GET
+    STAFF_MEMBERS_SET,
+    STAFF_TYPES_SET,
+    VENUES_SET
 } from './types';
-import { bossData } from '../../../data'
+import { fetchRequest } from '../../../services/API';
 
-export const fetchBossesThunk = () => dispatch => {
-    dispatch(fetchBosses());
-    Promise.resolve(bossData)
-        .then(data => {
-            dispatch(setBosses(data));
-        })
+export const fetchBossesThunk = () => async dispatch => {
+    try {
+        const response = await fetchRequest("https://purrweb-internship.herokuapp.com/api/v1/staff_members");
+        const { staffMembers, staffTypes, venues } = response.data;
+        dispatch(setStaffMembers(staffMembers));
+        dispatch(setStaffTypes(staffTypes));
+        dispatch(setVenues(venues));
+    }
+    catch (error) {
+        console.log(error)
+    }
 }
 
-export const fetchBosses = () => {
-    return { type: BOSSES_GET }
+const setStaffMembers = (staffMembers) => {
+    return { type: STAFF_MEMBERS_SET, payload: staffMembers }
 }
 
+const setStaffTypes = (staffTypes) => {
+    return { type: STAFF_TYPES_SET, payload: staffTypes }
+}
 
-export const setBosses = (bosses) => {
-    return { type: BOSSES_SET, payload: bosses }
+const setVenues = (venues) => {
+    return { type: VENUES_SET, payload: venues }
 }

@@ -1,18 +1,25 @@
 import React from 'react'
 import BossRow from './BossRow'
 import { CellHeader } from '../../Table';
+import { connect } from 'react-redux'
+import {
+    getStaffMembers,
+    getStaffTypes,
+    getVenues,
+    getAdditionalBossesData
+} from '../../../redux/selectors'
 
 const headerNames = [
     "",
     "Name",
     "Accessories",
-    "Modified Status",
+    "Modified",
+    "Status",
     "Type",
-    "Master",
-    "Venue",
+    "Master Venue",
     "Work Venues"];
 
-const BossTable = ({bossesData}) => {
+const BossTable = ({ staffMembers, staffTypes, venues, additionalData }) => {
     return (
         <div className="boss-table boss-table_page_staff-members-index">
             <div className="boss-table__row">
@@ -24,11 +31,32 @@ const BossTable = ({bossesData}) => {
                     ))
                 }
             </div>
-            {bossesData.map((element, id) =>
-                <BossRow key={id} data={element} />
-            )}
+            {
+                staffMembers.slice(0, 10).map(staffMember => {
+                    const staffType = staffTypes.find(type => staffMember.staffTypeId === type.id);
+                    const venue = venues.find(venue => venue.id === staffMember.masterVenueId);
+                    return <BossRow
+                        key={staffMember.id}
+                        memberInfo={staffMember}
+                        staffType={staffType}
+                        venue={venue}
+                        additionalData={additionalData}
+                    />
+                })
+            }
         </div>
     )
 }
 
-export default BossTable;
+const mapStateToProps = (state) => {
+    return {
+        staffMembers: getStaffMembers(state),
+        staffTypes: getStaffTypes(state),
+        venues: getVenues(state),
+        additionalData: getAdditionalBossesData()
+    }
+}
+
+const mapDispatchToProps = null;
+
+export default connect(mapStateToProps, mapDispatchToProps)(BossTable);

@@ -1,4 +1,6 @@
 
+import { additionalData } from '../data'
+
 export const getUserData = (state) => {
     return state.user.userData;
 }
@@ -30,4 +32,20 @@ export const getBossesData = (state) => {
 
 export const getProfileData = (state) => {
     return state.profile.profileData;
+}
+
+export const getStaffMembers = (state) => {
+    return state.bosses.bossesInfo.staffMembers;
+}
+
+export const getStaffTypes = (state) => {
+    return state.bosses.bossesInfo.staffTypes;
+}
+
+export const getVenues = (state) => {
+    return state.bosses.bossesInfo.venues
+}
+
+export const getAdditionalBossesData = () => {
+    return additionalData;
 }
