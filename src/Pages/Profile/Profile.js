@@ -1,5 +1,4 @@
 import React from 'react'
-import Main from '../Main'
 import ProfileDashboard from './ProfileDashboard'
 import ProfilePage from './ProfilePage'
 import HolidaysPage from './HolidaysPage'
@@ -9,11 +8,12 @@ import { connect } from 'react-redux'
 import ReactModal from 'react-modal'
 import { closeModal } from '../../redux/reducers/modalWindows/actions'
 import { bindActionCreators } from 'redux'
-import { HolidayModal, EditAvatarModal, Modal } from '../Modals'
+import { HolidayModal, EditAvatarModal, Modal } from '../../Components/Modals'
 import { EDIT_MODAL, ADD_MODAL, EDIT_AVATAR_MODAL } from '../../constants'
 import { fetchHolidaysThunk as fetchHolidays } from '../../redux/reducers/holidays/actions'
 import { fetchUserDataThunk as fetchUserData } from '../../redux/reducers/user/actions'
 import { fetchProfileDataThunk as fetchProfileData } from '../../redux/reducers/profile/actions'
+import MainLayout from '../../layouts/MainLayout'
 
 class Profile extends React.Component {
     componentDidMount = () => {
@@ -92,7 +92,7 @@ class Profile extends React.Component {
                 >
                     {this.getModalContext()}
                 </ReactModal>
-                <Main
+                <MainLayout
                     Dashboard={ProfileDashboard}
                     Content={() => (
                         <Switch>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { AccessorList } from '../../../Accessories'
+import { AccessorList } from '../../../../Components/Accessories'
 
 const UserSummaryContent = ({ content }) => {
     const { fullName, venue, phone, email, accessories } = content;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Field } from 'react-final-form'
-import { FormInput, FormSelect, FormField } from '../../Form/Components';
-import { Button } from "../../Form/UI"
+import { FormInput, FormSelect, FormField } from '../../../Components/Form/Components';
+import { Button } from "../../../Components/Form/UI"
 import DashboardLabelGroup from './DashboardLabelGroup';
 
 const onSubmit = (value) => {

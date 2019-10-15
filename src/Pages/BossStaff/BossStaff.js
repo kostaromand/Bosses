@@ -1,11 +1,11 @@
 import React from 'react'
-import Main from '../Main'
+import MainLayout from '../../layouts/MainLayout'
 import BossDashboard from './BossDashboard/BossDashboard'
 import BossTable from './BossTable'
 
 const BossStaff = () => {
     return (
-        <Main
+        <MainLayout
             Dashboard={BossDashboard}
             Content={() => <BossTable />}
         />

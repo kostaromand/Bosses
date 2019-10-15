@@ -1,8 +1,8 @@
 import React from 'react'
-import BossLink from '../../Table/BossLink';
-import { AccessorList } from '../../Accessories';
+import BossLink from '../../../Components/Table/BossLink';
+import { AccessorList } from '../../../Components/Accessories';
 import PropTypes from 'prop-types'
-import { Row, CellHeader, Cell } from '../../Table';
+import { Row, CellHeader, Cell } from '../../../Components/Table';
 
 const Boss = ({ memberInfo, venue, staffType, additionalData }) => {
     const { avatarUrl, firstName, surname, status } = memberInfo;

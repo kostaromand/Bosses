@@ -1,5 +1,5 @@
 import React from 'react'
-import { CheckBox } from '../../Form/UI'
+import { CheckBox } from '../../../Components/Form/UI'
 import PropTypes from 'prop-types'
 
 const DashboardLabelGroup = ({ input, labelText, checkBoxText }) => {

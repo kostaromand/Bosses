@@ -1,6 +1,6 @@
 import React from 'react'
 import HolidayRow from './HolidayRow';
-import { Table, Row, CellHeader } from '../../../../Table'
+import { Table, Row, CellHeader } from '../../../../../Components/Table'
 import { getHolidays } from '../../../../../redux/selectors'
 import { connect } from 'react-redux'
 import { openModal } from '../../../../../redux/reducers/modalWindows/actions'

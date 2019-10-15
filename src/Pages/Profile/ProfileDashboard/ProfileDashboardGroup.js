@@ -1,6 +1,6 @@
 import React from 'react'
 import ButtonsGroup from './ButtonsGroup'
-import DashboardGroup from '../../Dashboard/DashboardGroup'
+import DashboardGroup from '../../../Components/Dashboard/DashboardGroup'
 import UserSummary from './UserSummary/UserSummary'
 
 const ProfileDashboardGroup = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
-import MainContent from './MainContent'
+import MainContent from '../common/MainContent'
 
-const Main = ({ Dashboard, Content }) => {
+const MainLayout = ({ Dashboard, Content }) => {
     return (
         <main className="boss-page-main">
             <Dashboard/>
@@ -12,4 +12,4 @@ const Main = ({ Dashboard, Content }) => {
     )
 }
 
-export default Main;
+export default MainLayout;

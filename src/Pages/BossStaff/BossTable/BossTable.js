@@ -1,6 +1,6 @@
 import React from 'react'
 import BossRow from './BossRow'
-import { CellHeader } from '../../Table';
+import { CellHeader } from '../../../Components/Table';
 import { connect } from 'react-redux'
 import {
     getStaffMembers,

@@ -1,5 +1,5 @@
 import React from 'react'
-import DashboardGroup from '../../Dashboard/DashboardGroup'
+import DashboardGroup from '../../../Components/Dashboard/DashboardGroup'
 
 const BossDashboardGroup = () => {
     return (
