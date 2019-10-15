@@ -1,7 +1,7 @@
 import { USER_DATA_SET } from './types';
 import { userData } from '../../../data'
 
-export const fetchUserDataThunk = () => dispatch => {
+export const fetchUserData = () => dispatch => {
     Promise.resolve(userData).then(data => {
         dispatch(setUserData(data))   
     });

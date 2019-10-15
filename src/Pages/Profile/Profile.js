@@ -10,9 +10,9 @@ import { closeModal } from '../../redux/reducers/modalWindows/actions'
 import { bindActionCreators } from 'redux'
 import { HolidayModal, EditAvatarModal, Modal } from '../../Components/Modals'
 import { EDIT_MODAL, ADD_MODAL, EDIT_AVATAR_MODAL } from '../../constants'
-import { fetchHolidaysThunk as fetchHolidays } from '../../redux/reducers/holidays/actions'
-import { fetchUserDataThunk as fetchUserData } from '../../redux/reducers/user/actions'
-import { fetchProfileDataThunk as fetchProfileData } from '../../redux/reducers/profile/actions'
+import { fetchHolidays } from '../../redux/reducers/holidays/actions'
+import { fetchUserData } from '../../redux/reducers/user/actions'
+import { fetchProfileData } from '../../redux/reducers/profile/actions'
 import MainLayout from '../../layouts/MainLayout'
 
 class Profile extends React.Component {

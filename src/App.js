@@ -8,7 +8,7 @@ import 'react-dates/lib/css/_datepicker.css';
 import './CSS/index.css';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchBossesThunk as fetchBosses } from './redux/reducers/bosses/actions'
+import { fetchBosses } from './redux/reducers/bosses/actions'
 
 
 class App extends React.Component {

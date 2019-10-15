@@ -3,11 +3,11 @@ import {
     STAFF_TYPES_SET,
     VENUES_SET
 } from './types';
-import { fetchRequest } from '../../../services/API';
+import { fetchStaffMembers } from '../../../services/API';
 
-export const fetchBossesThunk = () => async dispatch => {
+export const fetchBosses = () => async dispatch => {
     try {
-        const response = await fetchRequest("https://purrweb-internship.herokuapp.com/api/v1/staff_members");
+        const response = await fetchStaffMembers();
         const { staffMembers, staffTypes, venues } = response.data;
         dispatch(setStaffMembers(staffMembers));
         dispatch(setStaffTypes(staffTypes));
