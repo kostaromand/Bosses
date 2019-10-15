@@ -17,7 +17,7 @@ import { fetchProfileDataThunk as fetchProfileData } from '../../redux/reducers/
 
 class Profile extends React.Component {
     componentDidMount = () => {
-        const { fetchHolidays, fetchUserData,fetchProfileData } = this.props;
+        const { fetchHolidays, fetchUserData, fetchProfileData } = this.props;
         fetchHolidays();
         fetchUserData();
         fetchProfileData();
@@ -56,6 +56,12 @@ class Profile extends React.Component {
                             headerText="Edit Avatar"
                             onSubmit={(value) => { console.log(value) }}
                         />
+                    </Modal>
+                )
+            default:
+                return (
+                    <Modal>
+                        Default modal                        
                     </Modal>
                 )
         }

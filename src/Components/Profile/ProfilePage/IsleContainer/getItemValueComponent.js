@@ -1,5 +1,6 @@
 import IsleButton from "./IsleButton";
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const TextComponent = ({ content }) => {
     return <>{content} </>
@@ -36,7 +37,7 @@ const TextWithTooltipComponent = ({ content }) => {
 
 const AppComponent = ({ content }) => {
     return (
-        <a href="#" className="boss-details__value-action">{content}</a>
+        <Link to="#" className="boss-details__value-action">{content}</Link>
     )
 }
 

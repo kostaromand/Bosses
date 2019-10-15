@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import DashboardForm from "./DashboardForm"
+import {  Link } from 'react-router-dom'
 
 class Filter extends Component {
     constructor(props) {
@@ -20,13 +21,13 @@ class Filter extends Component {
             <div className="boss-page-dashboard__filter">
                 <div className="boss-dropdown">
                     <div className="boss-dropdown__header">
-                        <a href="#"
+                        <Link to="#"
                             onClick={this.toggleFilter}
                             className={
                                 `boss-dropdown__switch boss-dropdown__switch_role_filter ${(filterState && filterStateClass)}`}
                         >
                             Filter
-                      </a>
+                      </Link>
                     </div>
                     {
                         filterState && (

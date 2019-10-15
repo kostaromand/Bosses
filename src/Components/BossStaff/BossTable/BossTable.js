@@ -17,7 +17,10 @@ const headerNames = [
     "Status",
     "Type",
     "Master Venue",
-    "Work Venues"];
+    "Work Venues"
+];
+
+const bossCount =10;
 
 const BossTable = ({ staffMembers, staffTypes, venues, additionalData }) => {
     return (
@@ -32,7 +35,7 @@ const BossTable = ({ staffMembers, staffTypes, venues, additionalData }) => {
                 }
             </div>
             {
-                staffMembers.slice(0, 10).map(staffMember => {
+                staffMembers.slice(0, bossCount).map(staffMember => {
                     const staffType = staffTypes.find(type => staffMember.staffTypeId === type.id);
                     const venue = venues.find(venue => venue.id === staffMember.masterVenueId);
                     return <BossRow

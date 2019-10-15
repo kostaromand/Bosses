@@ -2,7 +2,6 @@ import React from 'react'
 import IsleContainer from './IsleContainer'
 import { connect } from 'react-redux'
 import { getProfileData } from '../../../redux/selectors'
-import { bindActionCreators } from 'redux'
 
 const ProfilePage = ({ profileData }) => {
     return (

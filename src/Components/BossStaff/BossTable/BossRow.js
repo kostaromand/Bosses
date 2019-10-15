@@ -7,7 +7,6 @@ import { Row, CellHeader, Cell } from '../../Table';
 const Boss = ({ memberInfo, venue, staffType, additionalData }) => {
     const { avatarUrl, firstName, surname, status } = memberInfo;
     const { accessories, workVenues, modified } = additionalData;
-    console.log(staffType)
     return (
         <Row>
             <CellHeader>

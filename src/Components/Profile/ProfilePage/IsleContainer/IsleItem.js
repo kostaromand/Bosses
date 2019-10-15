@@ -1,5 +1,4 @@
 import React from 'react'
-import IsleButton from './IsleButton';
 import getItemValueComponent from './getItemValueComponent'
 const IsleItem = ({ label, value }) => {
     const ItemValueComponent = getItemValueComponent(value);

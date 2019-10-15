@@ -28,7 +28,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 holidaysData: state.holidaysData.map(holiday => (
-                    holiday.id == newHoliday.id ? newHoliday : holiday
+                    holiday.id === newHoliday.id ? newHoliday : holiday
                 ))
             }
         case HOLIDAY_DELETE:
