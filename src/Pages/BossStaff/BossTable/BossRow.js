@@ -1,25 +1,25 @@
 import React from 'react'
-import BossLink from '../../../Components/Table/BossLink';
 import { AccessorList } from '../../../Components/Accessories';
 import PropTypes from 'prop-types'
 import { Row, CellHeader, Cell } from '../../../Components/Table';
+import { Link } from 'react-router-dom'
 
 const Boss = ({ memberInfo, venue, staffType, additionalData }) => {
-    const { avatarUrl, firstName, surname, status } = memberInfo;
+    const { avatarUrl, firstName, surname, status, id } = memberInfo;
     const { accessories, workVenues, modified } = additionalData;
     return (
         <Row>
             <CellHeader>
                 <div className="boss-table__image">
-                    <BossLink to="/profile">
+                    <Link to={`/profile/${id}`} className="boss-table__link">
                         <div className="boss-avatar boss-avatar_type_combined boss-avatar_type_scannable">
                             <img src={avatarUrl} alt="Avatar" className="boss-avatar__image" />
                         </div>
-                    </BossLink>
+                    </Link>
                 </div>
             </CellHeader>
             <Cell>
-                <BossLink to="/">{`${firstName} ${surname}`}</BossLink>
+                <Link to="/">{`${firstName} ${surname}`}</Link>
             </Cell>
             <Cell>
                 <AccessorList accessories={accessories} />
@@ -37,13 +37,13 @@ const Boss = ({ memberInfo, venue, staffType, additionalData }) => {
                 </button>
             </Cell>
             <Cell>
-                <BossLink to="/">{staffType.name}</BossLink>
+                <Link to="/">{staffType.name}</Link>
             </Cell>
             <Cell>
-                <BossLink to="/">{venue.name}</BossLink>
+                <Link to="/">{venue.name}</Link>
             </Cell>
             <Cell>
-                <BossLink to="/">{workVenues}</BossLink>
+                <Link to="/">{workVenues}</Link>
             </Cell>
         </Row>
     )

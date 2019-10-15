@@ -4,13 +4,14 @@ import tabs from './tabs'
 import modalWindows from './modalWindows'
 import holidays from './holidays'
 import bosses from './bosses'
-import user from './user'
-
+import userDataTypes from './userDataTypes'
+import profileData from './profileData'
 export default combineReducers({
     profile,
     tabs,
     modalWindows,
     holidays,
     bosses,
-    user
+    userDataTypes,
+    profileData
 })

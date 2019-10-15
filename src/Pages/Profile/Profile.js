@@ -11,16 +11,17 @@ import { bindActionCreators } from 'redux'
 import { HolidayModal, EditAvatarModal, Modal } from '../../Components/Modals'
 import { EDIT_MODAL, ADD_MODAL, EDIT_AVATAR_MODAL } from '../../constants'
 import { fetchHolidays } from '../../redux/reducers/holidays/actions'
-import { fetchUserData } from '../../redux/reducers/user/actions'
 import { fetchProfileData } from '../../redux/reducers/profile/actions'
+import { fetchProfileData as fetchProfileData2 } from '../../redux/reducers/profileData/actions'
 import MainLayout from '../../layouts/MainLayout'
 
 class Profile extends React.Component {
     componentDidMount = () => {
-        const { fetchHolidays, fetchUserData, fetchProfileData } = this.props;
+        const { fetchHolidays, fetchProfileData, fetchProfileData2 } = this.props;
+        const id = this.props.match.params.id;
         fetchHolidays();
-        fetchUserData();
         fetchProfileData();
+        fetchProfileData2(id);
     }
 
     getModalContext = () => {
@@ -61,7 +62,7 @@ class Profile extends React.Component {
             default:
                 return (
                     <Modal>
-                        Default modal                        
+                        Default modal
                     </Modal>
                 )
         }
@@ -96,7 +97,7 @@ class Profile extends React.Component {
                     Dashboard={ProfileDashboard}
                     Content={() => (
                         <Switch>
-                            <Route exact path="/profile" component={ProfilePage} />
+                            <Route path="/profile/:id" component={ProfilePage} />
                             <Route path="/profile/holidays" component={HolidaysPage} />
                         </Switch>
                     )}
@@ -118,8 +119,8 @@ const mapDispatchToProps = (dispatch) => (
         {
             closeModal,
             fetchHolidays,
-            fetchUserData,
-            fetchProfileData
+            fetchProfileData,
+            fetchProfileData2
         },
         dispatch
     )

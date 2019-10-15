@@ -1,16 +1,17 @@
-import { USER_DATA_SET } from './types';
+import {
+    USER_INFO_SET
+} from './types'
 
 const initialState = {
-    userData:{
-        accessories:[]
-    }
+    userInfo:{}
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case USER_DATA_SET:
+        case USER_INFO_SET:
             return {
-                userData: action.payload,
+                ...state,
+                userInfo: action.payload
             }
         default:
             return state;

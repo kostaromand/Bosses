@@ -1,7 +1,7 @@
 import React from 'react'
 import IsleItem from './IsleItem'
 
-const Isle = ({ id, title, items }) => {
+const Isle = ({ id, title, children }) => {
     return (
         <div className="boss-page-main__isle">
             <section className="boss-details">
@@ -15,11 +15,7 @@ const Isle = ({ id, title, items }) => {
                         {title}
                     </h3>
                     <ul className="boss-details__list">
-                        {
-                            items.map(item => (
-                                <IsleItem key={item.id} label={item.label} value={item.value} />
-                            ))
-                        }
+                        {children}
                     </ul>
                 </div>
             </section>

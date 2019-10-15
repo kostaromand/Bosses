@@ -141,31 +141,6 @@ const holidaysData = [
     }
 ]
 
-const userData = {
-    avatar: "/images/avatar.jpg",
-    fullName: "Trulla Collier",
-    venue: "Some Venue",
-    email: "trulla.collier@yahoo.com",
-    phone: "+123 342 342",
-    accessories: [
-        {
-            color: "#2ecc71",
-            count: 3,
-            tooltip: { header: "aad", text: "adsd" }
-        },
-        {
-            type: "boss-indicator__icon_apron",
-            color: "cd84f1",
-            count: 3,
-            tooltip: { header: "aad", text: "adsd" }
-        },
-        {
-            color: "",
-            count: 3,
-            tooltip: { header: "aad", text: "adsd" }
-        },
-    ],
-}
 
 const profileData = [
     {
@@ -220,4 +195,4 @@ const additionalData = {
     workVenues: "Something"
 }
 
-export { bossData, aliasData, holidaysData, userData, profileData, additionalData }
+export { bossData, aliasData, holidaysData, profileData, additionalData }

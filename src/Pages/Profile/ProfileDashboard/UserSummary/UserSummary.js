@@ -2,17 +2,17 @@ import React from 'react'
 import ProfileAvatar from './ProfileAvatar'
 import UserSummaryContent from './UserSummaryContent'
 import { connect } from "react-redux"
-import { getUserData } from '../../../../redux/selectors'
+import { getUserSummary } from '../../../../redux/selectors'
 
 const UserSummary = ({ userData }) => {
-    const { avatar, ...content } = userData;
+    const { avatarUrl, ...content } = userData;
     return (
         <div className="boss-page-dashboard__user-summary">
             <div className="boss-user-summary">
                 <div className="boss-user-summary__side">
-                    <ProfileAvatar avatar={avatar} />
+                    <ProfileAvatar avatar={avatarUrl} />
                 </div>
-                <UserSummaryContent content={content} />
+                <UserSummaryContent {...content} />
             </div>
         </div>
     )
@@ -20,7 +20,7 @@ const UserSummary = ({ userData }) => {
 
 const mapStateToProps = (state) => {
     return {
-        userData: getUserData(state)
+        userData: getUserSummary(state)
     }
 }
 

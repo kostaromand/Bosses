@@ -23,7 +23,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/" component={BossStaff} />
-            <Route path="/profile" component={Profile} />
+            <Route path="/profile/:id" component={Profile} />
           </Switch>
         </div>
       </Router>

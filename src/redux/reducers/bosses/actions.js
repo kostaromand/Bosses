@@ -1,9 +1,8 @@
 import {
     STAFF_MEMBERS_SET,
-    STAFF_TYPES_SET,
-    VENUES_SET
 } from './types';
 import { fetchStaffMembers } from '../../../services/API';
+import { setVenues, setStaffTypes } from '../userDataTypes/actions'
 
 export const fetchBosses = () => async dispatch => {
     try {
@@ -20,12 +19,4 @@ export const fetchBosses = () => async dispatch => {
 
 const setStaffMembers = (staffMembers) => {
     return { type: STAFF_MEMBERS_SET, payload: staffMembers }
-}
-
-const setStaffTypes = (staffTypes) => {
-    return { type: STAFF_TYPES_SET, payload: staffTypes }
-}
-
-const setVenues = (venues) => {
-    return { type: VENUES_SET, payload: venues }
 }
