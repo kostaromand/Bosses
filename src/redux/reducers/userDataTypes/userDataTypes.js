@@ -1,7 +1,6 @@
 import {
-    PAY_RATES_SET,
-    STAFF_TYPES_SET,
-    VENUES_SET
+    STAFF_MEMBERS_SET,
+    PROFILE_DATA_SET
 } from './types'
 
 const initialState = {
@@ -12,20 +11,18 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case PAY_RATES_SET:
+        case STAFF_MEMBERS_SET:
             return {
                 ...state,
-                payRates: action.payload
+                staffTypes: action.payload.staffTypes,
+                venues:action.payload.venues
             }
-        case STAFF_TYPES_SET:
+        case PROFILE_DATA_SET:
             return {
                 ...state,
-                staffTypes: action.payload
-            }
-        case VENUES_SET:
-            return {
-                ...state,
-                venues: action.payload
+                staffTypes: action.payload.staffTypes,
+                venues:action.payload.venues,
+                payRates: action.payload.payRates
             }
         default:
             return state;

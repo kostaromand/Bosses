@@ -1,5 +1,7 @@
 
 import { additionalData } from '../data'
+import { isEmpty } from 'lodash'
+import { createSelector } from 'reselect'
 
 export const getTabs = (state) => {
     return state.tabs.tabInfo
@@ -22,46 +24,7 @@ export const getHolidayInEdit = (state) => {
     return state.holidays.holidaysData[id];
 }
 
-export const getBossesData = (state) => {
-    return state.bosses.bossesData;
-}
-
-const getVenue = (state) => {
-    const venueId = state.profileData.userInfo.masterVenueId;
-    return state.userDataTypes.venues.find(venue => venue.id === venueId)
-}
-
-const getStaffType = (state) => {
-    const staffTypeId = state.profileData.userInfo.staffTypeId;
-    return state.userDataTypes.staffTypes.find(type => type.id === staffTypeId);
-}
-
-const getPayRate = (state) => {
-    const payRateId = state.profileData.userInfo.payRateId;
-    return state.userDataTypes.payRates.find(rate => rate.id === payRateId);
-}
-
-export const getProfileData = (state) => {
-    return {
-        ...state.profileData.userInfo,
-        venue: getVenue(state),
-        staffType: getStaffType(state),
-        payRate: getPayRate(state)
-    }
-}
-
-export const getUserSummary = (state) => {
-    const { avatarUrl, firstName, surname, email, phoneNumber } = state.profileData.userInfo;
-    return {
-        avatarUrl,
-        fullName: `${firstName} ${surname}`,
-        email,
-        phoneNumber,
-        venue: getVenue(state),
-        staffType: getStaffType(state),
-        accessories: []
-    }
-}
+export const selectProfileData = state => state.profileData;
 
 export const getStaffMembers = (state) => {
     return state.bosses.staffMembers;
@@ -82,3 +45,48 @@ export const getPayRates = (state) => {
 export const getAdditionalBossesData = () => {
     return additionalData;
 }
+
+
+export const getProfileData = createSelector(
+    [getStaffMembers, selectProfileData, getVenues, getPayRates, getStaffTypes],
+    (staffMembers, profileData, venues, payRates, staffTypes) => {
+        if (isEmpty(profileData)) {
+            return {}
+        }
+        console.log(staffMembers)
+        const { masterVenueId, staffTypeId, payRateId, otherVenueIds } = profileData;
+        return {
+            ...profileData,
+            status: staffMembers.find(member => member.id === profileData.id).status,
+            venue: venues.find(venue => venue.id === masterVenueId),
+            staffType: staffTypes.find(type => type.id === staffTypeId),
+            payRate: payRates.find(rate => rate.id === payRateId),
+            otherVenues: otherVenueIds.map(id => venues.find(venue => venue.id === id))
+        }
+    })
+
+export const getUserSummary = createSelector(
+    [selectProfileData, getVenues, getStaffTypes],
+    (profileData, venues, staffTypes) => {
+        if (isEmpty(profileData)) {
+            return {}
+        }
+        const {
+            avatarUrl,
+            firstName,
+            surname,
+            email,
+            phoneNumber,
+            masterVenueId,
+            staffTypeId
+        } = profileData;
+        return {
+            avatarUrl,
+            fullName: `${firstName} ${surname}`,
+            email,
+            phoneNumber,
+            venue: venues.find(venue => venue.id === masterVenueId),
+            staffType: staffTypes.find(type => type.id === staffTypeId),
+            accessories: []
+        }
+    })

@@ -6,16 +6,8 @@ import BossStaff from './Pages/BossStaff';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import './CSS/index.css';
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { fetchBosses } from './redux/reducers/bosses/actions'
-
 
 class App extends React.Component {
-  componentDidMount = () => {
-    this.props.fetchBosses();
-  }
-
   render = () => {
     return (
       <Router>
@@ -30,12 +22,5 @@ class App extends React.Component {
     );
   }
 }
-const mapDispatchToProps = dispatch => (
-  bindActionCreators({
-    fetchBosses
-  },
-    dispatch
-  )
-)
 
-export default connect(null, mapDispatchToProps)(App);
+export default App;

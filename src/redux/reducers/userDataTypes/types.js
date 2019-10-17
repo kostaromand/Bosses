@@ -1,3 +1,2 @@
-export const PAY_RATES_SET = "PAY_RATES_SET";
-export const STAFF_TYPES_SET = "STAFF_TYPES_SET";
-export const VENUES_SET = "VENUES_SET";
+export const PROFILE_DATA_SET = "PROFILE_DATA_SET"
+export const STAFF_MEMBERS_SET  = "STAFF_MEMBERS_SET"

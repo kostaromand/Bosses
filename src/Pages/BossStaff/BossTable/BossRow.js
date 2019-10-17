@@ -19,7 +19,7 @@ const Boss = ({ memberInfo, venue, staffType, additionalData }) => {
                 </div>
             </CellHeader>
             <Cell>
-                <Link to="/">{`${firstName} ${surname}`}</Link>
+                <Link to="/" className="boss-table__link">{`${firstName} ${surname}`}</Link>
             </Cell>
             <Cell>
                 <AccessorList accessories={accessories} />
@@ -37,13 +37,13 @@ const Boss = ({ memberInfo, venue, staffType, additionalData }) => {
                 </button>
             </Cell>
             <Cell>
-                <Link to="/">{staffType.name}</Link>
+                <Link to="/" className="boss-table__link">{staffType.name}</Link>
             </Cell>
             <Cell>
-                <Link to="/">{venue.name}</Link>
+                <Link to="/" className="boss-table__link">{venue.name}</Link>
             </Cell>
             <Cell>
-                <Link to="/">{workVenues}</Link>
+                <Link to="/" className="boss-table__link">{workVenues}</Link>
             </Cell>
         </Row>
     )

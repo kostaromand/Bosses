@@ -6,7 +6,9 @@ const IsleItem = ({ label, children }) => {
                 label &&
                 <p className="boss-details__label boss-details__label_size_small">{label}</p>
             }
-            {children}
+            <p className="boss-details__value">
+                {children}
+            </p>
         </li>
     )
 }

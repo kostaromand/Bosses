@@ -11,17 +11,16 @@ import { bindActionCreators } from 'redux'
 import { HolidayModal, EditAvatarModal, Modal } from '../../Components/Modals'
 import { EDIT_MODAL, ADD_MODAL, EDIT_AVATAR_MODAL } from '../../constants'
 import { fetchHolidays } from '../../redux/reducers/holidays/actions'
-import { fetchProfileData } from '../../redux/reducers/profile/actions'
-import { fetchProfileData as fetchProfileData2 } from '../../redux/reducers/profileData/actions'
+import { fetchProfileData } from '../../redux/reducers/profileData/actions'
 import MainLayout from '../../layouts/MainLayout'
+import ProfilePageContainer from './ProfilePage/ProfilePageContainer'
 
 class Profile extends React.Component {
     componentDidMount = () => {
-        const { fetchHolidays, fetchProfileData, fetchProfileData2 } = this.props;
+        const { fetchHolidays, fetchProfileData } = this.props;
         const id = this.props.match.params.id;
         fetchHolidays();
-        fetchProfileData();
-        fetchProfileData2(id);
+        fetchProfileData(id);
     }
 
     getModalContext = () => {
@@ -97,7 +96,7 @@ class Profile extends React.Component {
                     Dashboard={ProfileDashboard}
                     Content={() => (
                         <Switch>
-                            <Route path="/profile/:id" component={ProfilePage} />
+                            <Route path="/profile/:id" component={ProfilePageContainer} />
                             <Route path="/profile/holidays" component={HolidaysPage} />
                         </Switch>
                     )}
@@ -120,7 +119,6 @@ const mapDispatchToProps = (dispatch) => (
             closeModal,
             fetchHolidays,
             fetchProfileData,
-            fetchProfileData2
         },
         dispatch
     )

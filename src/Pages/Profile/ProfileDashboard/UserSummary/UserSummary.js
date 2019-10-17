@@ -3,8 +3,11 @@ import ProfileAvatar from './ProfileAvatar'
 import UserSummaryContent from './UserSummaryContent'
 import { connect } from "react-redux"
 import { getUserSummary } from '../../../../redux/selectors'
-
+import { isEmpty } from "lodash";
 const UserSummary = ({ userData }) => {
+    if (isEmpty(userData)) {
+        return <div>Loading</div>
+    }
     const { avatarUrl, ...content } = userData;
     return (
         <div className="boss-page-dashboard__user-summary">

@@ -1,17 +1,14 @@
 import {
-    USER_INFO_SET
+    PROFILE_DATA_SET
 } from './types'
 
-const initialState = {
-    userInfo:{}
-}
+const initialState = {}
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case USER_INFO_SET:
+        case PROFILE_DATA_SET:
             return {
-                ...state,
-                userInfo: action.payload
+                ...action.payload.staffMember
             }
         default:
             return state;

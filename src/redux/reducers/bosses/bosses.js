@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
         case STAFF_MEMBERS_SET:
             return {
                 ...state,
-                staffMembers: action.payload
+                staffMembers: action.payload.staffMembers
             }
         default:
             return state;
