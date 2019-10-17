@@ -96,8 +96,8 @@ class Profile extends React.Component {
                     Dashboard={ProfileDashboard}
                     Content={() => (
                         <Switch>
-                            <Route path="/profile/:id" component={ProfilePageContainer} />
                             <Route path="/profile/holidays" component={HolidaysPage} />
+                            <Route exact path="/profile/:id" component={ProfilePageContainer} />
                         </Switch>
                     )}
                 />

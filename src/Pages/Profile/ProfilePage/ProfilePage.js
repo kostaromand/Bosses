@@ -1,9 +1,9 @@
 import React from 'react'
-import Isle from './IsleContainer/Isle'
-import IsleItem from './IsleContainer/IsleItem'
+import Isle from './common/Isle'
+import IsleItem from './common/IsleItem'
 import moment from 'moment'
 import { isNull } from 'util'
-import ValueLine from './ValueLine'
+import ValueLine from './common/ValueLine'
 import { Link } from 'react-router-dom'
 const ProfilePage = ({ profileData }) => {
     const {
