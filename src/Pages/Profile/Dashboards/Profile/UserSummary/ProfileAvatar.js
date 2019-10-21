@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { EDIT_AVATAR_MODAL } from '../../../../constants'
-import { openModal } from '../../../../redux/reducers/modalWindows/actions'
+import { EDIT_AVATAR_MODAL } from '../../../../../constants'
+import { openModal } from '../../../../../redux/reducers/modalWindows/actions'
 import { bindActionCreators } from 'redux'
 import { Link } from "react-router-dom"
 const ProfileAvatar = ({ avatar, openModal }) => {

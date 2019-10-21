@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Cell, InfoGroupCell, ActionCell } from '../../../../../Components/Table'
+import { Row, Cell, InfoGroupCell, ActionCell } from '../../../../../../Components/Table'
 import { Link } from 'react-router-dom'
 
 const statusStyles = {

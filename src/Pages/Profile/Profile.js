@@ -1,7 +1,8 @@
 import React from 'react'
-import ProfileDashboard from './ProfileDashboard'
-import ProfilePage from './ProfilePage'
-import HolidaysPage from './HolidaysPage'
+import ProfileDashboard from './Dashboards/Profile'
+import EditDashboard from './Dashboards/EditDashboard'
+import HolidaysContent from './Content/Holidays'
+import ProfileContentContainer from './Content/Profile'
 import { Route, Switch } from 'react-router-dom'
 import { getHolidayInEdit, getOpenedModalName } from '../../redux/selectors'
 import { connect } from 'react-redux'
@@ -13,8 +14,7 @@ import { EDIT_MODAL, ADD_MODAL, EDIT_AVATAR_MODAL } from '../../constants'
 import { fetchHolidays } from '../../redux/reducers/holidays/actions'
 import { fetchProfileData } from '../../redux/reducers/profileData/actions'
 import MainLayout from '../../layouts/MainLayout'
-import ProfilePageContainer from './ProfilePage/ProfilePageContainer'
-
+import ProfileEditContent from './Content/ProfileEdit'
 class Profile extends React.Component {
     componentDidMount = () => {
         const { fetchHolidays, fetchProfileData } = this.props;
@@ -81,6 +81,7 @@ class Profile extends React.Component {
         const {
             closeModal,
             openedModalName,
+            match: { params: { id } }
         } = this.props
         return (
             <>
@@ -92,15 +93,26 @@ class Profile extends React.Component {
                 >
                     {this.getModalContext()}
                 </ReactModal>
-                <MainLayout
-                    Dashboard={ProfileDashboard}
-                    Content={() => (
-                        <Switch>
-                            <Route path="/profile/holidays" component={HolidaysPage} />
-                            <Route exact path="/profile/:id" component={ProfilePageContainer} />
-                        </Switch>
-                    )}
-                />
+                <Switch>
+                    <Route exact path="/profile/:id/holidays" render={() =>
+                        <MainLayout
+                            Dashboard={ProfileDashboard}
+                            Content={HolidaysContent}
+                        />}
+                    />
+                    <Route exact path="/profile/:id" render={() =>
+                        <MainLayout
+                            Dashboard={ProfileDashboard}
+                            Content={ProfileContentContainer}
+                        />}
+                    />
+                    <Route path="/profile/:id/edit/:form" render={(props) =>
+                        <MainLayout
+                            Dashboard={() => <EditDashboard id={id} />}
+                            Content={() => <ProfileEditContent {...props} />}
+                        />}
+                    />
+                </Switch>
             </>
         )
     }

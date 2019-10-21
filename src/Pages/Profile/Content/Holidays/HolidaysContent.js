@@ -1,9 +1,9 @@
 import React from 'react'
 import Board from './Board'
 import { connect } from 'react-redux'
-import { openModal } from '../../../redux/reducers/modalWindows/actions'
+import { openModal } from '../../../../redux/reducers/modalWindows/actions'
 import { bindActionCreators } from 'redux'
-import { ADD_MODAL } from '../../../constants'
+import { ADD_MODAL } from '../../../../constants'
 
 const HolidaysPage = ({ openModal }) => {
     return (

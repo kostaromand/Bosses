@@ -1,5 +1,4 @@
 import React from 'react'
-import IsleItem from './IsleItem'
 
 const Isle = ({ id, title, children }) => {
     return (

@@ -53,7 +53,6 @@ export const getProfileData = createSelector(
         if (isEmpty(profileData)) {
             return {}
         }
-        console.log(staffMembers)
         const { masterVenueId, staffTypeId, payRateId, otherVenueIds } = profileData;
         return {
             ...profileData,
@@ -72,19 +71,14 @@ export const getUserSummary = createSelector(
             return {}
         }
         const {
-            avatarUrl,
             firstName,
             surname,
-            email,
-            phoneNumber,
             masterVenueId,
-            staffTypeId
+            staffTypeId,
         } = profileData;
         return {
-            avatarUrl,
+            ...profileData,
             fullName: `${firstName} ${surname}`,
-            email,
-            phoneNumber,
             venue: venues.find(venue => venue.id === masterVenueId),
             staffType: staffTypes.find(type => type.id === staffTypeId),
             accessories: []

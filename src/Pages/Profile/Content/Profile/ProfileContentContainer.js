@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getProfileData } from '../../../redux/selectors'
+import { getProfileData } from '../../../../redux/selectors'
 import { isEmpty } from "lodash";
-import ProfilePage from './ProfilePage';
+import ProfileContent from './ProfileContent';
 
 const ProfilePageContainer = ({ profileData }) => {
     return (
@@ -11,7 +11,7 @@ const ProfilePageContainer = ({ profileData }) => {
                 isEmpty(profileData) ?
                     <div>Loading</div>
                     :
-                    <ProfilePage profileData={profileData} />
+                    <ProfileContent profileData={profileData} />
             }
         </>
     )

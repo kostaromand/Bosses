@@ -5,6 +5,7 @@ import moment from 'moment'
 import { isNull } from 'util'
 import ValueLine from './common/ValueLine'
 import { Link } from 'react-router-dom'
+
 const ProfilePage = ({ profileData }) => {
     const {
         venue,

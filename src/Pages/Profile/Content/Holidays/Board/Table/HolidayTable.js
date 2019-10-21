@@ -1,12 +1,12 @@
 import React from 'react'
 import HolidayRow from './HolidayRow';
-import { Table, Row, CellHeader } from '../../../../../Components/Table'
-import { getHolidays } from '../../../../../redux/selectors'
+import { Table, Row, CellHeader } from '../../../../../../Components/Table'
+import { getHolidays } from '../../../../../../redux/selectors'
 import { connect } from 'react-redux'
-import { openModal } from '../../../../../redux/reducers/modalWindows/actions'
-import { setHolidayInEdit, deleteHoliday } from '../../../../../redux/reducers/holidays/actions'
+import { openModal } from '../../../../../../redux/reducers/modalWindows/actions'
+import { setHolidayInEdit, deleteHoliday } from '../../../../../../redux/reducers/holidays/actions'
 import { bindActionCreators } from 'redux'
-import { EDIT_MODAL } from '../../../../../constants'
+import { EDIT_MODAL } from '../../../../../../constants'
 
 const columnHeaders = ["Types", "Status", "Dates", "Note", "Created", "Payslip Date", ""];
 class HolidayTable extends React.Component {
