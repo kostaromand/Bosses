@@ -8,7 +8,6 @@ import { fetchBosses } from '../../redux/reducers/bosses/actions'
 
 export const BossStaff = () => {
     useEffect(() => {
-        //this.props.fetchBosses();
         console.log(1322321)
     }, []);
     return (
