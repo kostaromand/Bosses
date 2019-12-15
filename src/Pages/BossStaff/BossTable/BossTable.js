@@ -20,7 +20,7 @@ const headerNames = [
     "Work Venues"
 ];
 
-const bossCount =20;
+const bossCount =230;
 
 const BossTable = ({ staffMembers, staffTypes, venues, additionalData }) => {
     return (
