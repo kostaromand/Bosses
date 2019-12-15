@@ -10,6 +10,7 @@ export const BossStaff = () => {
     useEffect(() => {
         //this.props.fetchBosses();
         console.log(1322321)
+        console.log(1322321)
     }, []);
     return (
         <MainLayout
