@@ -19,6 +19,7 @@ const fetchStaffMembers = () => {
 
 const fetchUser = (userId) => {
     const url = `https://purrweb-internship.herokuapp.com/api/v1/staff_members/${userId}`;
+    console.log("zdarova")
     return fetchRequest(url);
 }
 
