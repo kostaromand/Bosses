@@ -1,1 +1,1 @@
-export {default} from "./BossStaff"
+export { default } from "./BossStaff"

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import MainLayout from '../../layouts/MainLayout'
 import BossDashboard from './BossDashboard/BossDashboard'
 import BossTable from './BossTable'
@@ -6,18 +6,16 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchBosses } from '../../redux/reducers/bosses/actions'
 
-class BossStaff extends React.Component {
-    componentDidMount = () => {
+export const BossStaff = () => {
+    useEffect(() => {
         this.props.fetchBosses();
-    }
-    render = () => {
-        return (
-            <MainLayout
-                Dashboard={BossDashboard}
-                Content={() => <BossTable />}
-            />
-        )
-    }
+    }, []);
+    return (
+        <MainLayout
+            Dashboard={BossDashboard}
+            Content={() => <BossTable />}
+        />
+    )
 }
 
 const mapDispatchToProps = dispatch => (
